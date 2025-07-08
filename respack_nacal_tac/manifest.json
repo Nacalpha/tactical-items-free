@@ -1,25 +1,25 @@
 {
   "modules": [
     {
-      "description": "Nacalpha TAC Pack",
       "type": "resources",
-      "uuid": "abe7e9b6-e499-4b94-a6b7-5e7a321b0854",
+      "uuid": "16fe6a8a-2edd-48e1-a327-06e741ac63f5",
       "version": [
         1,
         0,
         4
-      ]
+      ],
+      "description": "Nacalpha TAC Pack"
     }
   ],
   "header": {
-    "description": "Nacalpha TAC Pack",
-    "name": "Nacalpha TAC Pack",
-    "uuid": "2ba70ff2-8c3b-4d72-8adf-ad4aeb472b43",
+    "uuid": "e4821a6f-cac9-4ba5-a49b-c9a6952dbe14",
     "version": [
       1,
       0,
       6
     ],
+    "description": "Nacalpha TAC Pack",
+    "name": "Nacalpha TAC Pack",
     "min_engine_version": [
       1,
       21,

@@ -51,7 +51,7 @@
           "component_groups": [
             "normal_die"
           ]
-        }/* ,
+        },
         "queue_command": {
           "command": [
             "playsound tac.he @a ~~~ 1 1 0.2",
@@ -65,7 +65,7 @@
             "particle nacal_tac:explode_circle ~ ~ ~",
             "particle nacal_tac:explode_smoke2 ~ ~ ~"
           ]
-        } */
+        }
       }
     }
   }

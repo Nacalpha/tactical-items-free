@@ -102,7 +102,7 @@
         "queue_command": {
           "command": [
             "playsound tac.hit_light @a ~~~ 1 1",
-            "summon nacal_tac:healarea_stay"
+            "summon nacal_tac:healarea_stay ~ ~1 ~"
           ]
         }
       },

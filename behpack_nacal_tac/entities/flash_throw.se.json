@@ -91,7 +91,7 @@
           "command": [
             "playsound tac.hit_light @a ~~~ 1 1",
             "execute as @a[r=8,m=!c] at @s run particle nacal_tac:flash_circle ~ ~1 ~",
-            "summon nacal_tac:flash_stay",
+            "summon nacal_tac:flash_stay ~ ~1 ~ ~~",
             "particle nacal_tac:flash_circle ~ ~0.5 ~"
           ]
         }

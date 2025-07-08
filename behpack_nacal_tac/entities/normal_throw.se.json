@@ -104,19 +104,8 @@
         },
         "queue_command": {
           "command": [
-            "summon nacal_tac:normal_stay",
-            "playsound tac.hit_heavy @a ~~~ 1 1",
-
-            "playsound tac.he @a ~~~ 1 1 0.2",
-            "particle nacal_tac:tnnk_dust",
-            "camerashake add @a[tag=!noshake,r=16] 0.3 0.2 positional",
-            "particle nacal_sdc:tnnkdust ~ ~0.5 ~",
-            "particle nacal_city:smoke_circle",
-            "particle nacal_tac:burn_2 ~ ~0.2 ~",
-
-            "particle nacal_tac:explode_dust1 ~ ~ ~",
-            "particle nacal_tac:explode_circle ~ ~ ~",
-            "particle nacal_tac:explode_smoke2 ~ ~ ~"
+            "summon nacal_tac:normal_stay ~ ~0.8 ~",
+            "playsound tac.hit_heavy @a ~~~ 1 1"
           ]
         }
       },

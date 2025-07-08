@@ -112,7 +112,7 @@
           "command": [
             "playsound tac.hit_light @a ~~~ 1 1",
             "playsound tac.smoke @a ~~~ 1 1",
-            "summon nacal_tac:smoke_stay ~~~",
+            "summon nacal_tac:smoke_stay ~~0.8~",
             //"particle nacal_tac:smoke ~ ~0.5 ~",
             //"particle nacal_tac:smoke_spit ~ ~1 ~",
             "fill ~-3 ~-3 ~-3 ~3 ~3 ~3 air replace fire"
@@ -129,7 +129,7 @@
           "command": [
             "playsound tac.hit_light @a ~~~ 1 1",
             "playsound tac.smoke @a ~~~ 1 1",
-            "particle nacal_tac:smoke_group ~ ~0.5 ~",
+            "particle nacal_tac:smoke_group ~ ~0.8 ~",
             "particle nacal_tac:smoke_spit ~ ~1 ~",
             "fill ~-4 ~-4 ~-4 ~4 ~4 ~4 air replace fire"
           ]
