@@ -326,8 +326,8 @@
       "search_player": {
         "queue_command": {
           "command": [
-            "execute @a[r=2,m=!c,tag=!not_mineset] ~~~ event entity @e[type=nacal_tac:mineset_stay,r=2]  boom"
-            //"execute @e[r=2,tag=!not_mineset] ~~~ event entity @e[type=nacal_tac:mineset_stay,r=2]  boom"
+            "execute as @a[r=2,m=!c,tag=!not_mineset] positioned ~~~ run event entity @e[type=nacal_tac:mineset_stay,r=2]  boom"
+            //"execute as @e[r=2,tag=!not_mineset] positioned ~~~ run event entity @e[type=nacal_tac:mineset_stay,r=2]  boom"
           ]
         }
       },

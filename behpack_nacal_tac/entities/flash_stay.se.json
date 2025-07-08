@@ -70,8 +70,8 @@
       "flash_sound": {
         "queue_command": {
           "command": [
-            "execute @a[r=8] ~~~ playsound tac.hit_light @s",
-            "execute @a[r=8,m=!c] ~~~ particle nacal_tac:flash_circle ~ ~1 ~"
+            "execute as @a[r=8] at @s run playsound tac.hit_light @s",
+            "execute as @a[r=8,m=!c] at @s run particle nacal_tac:flash_circle ~ ~1 ~"
           ]
         }
       }

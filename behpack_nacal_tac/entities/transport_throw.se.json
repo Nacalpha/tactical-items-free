@@ -76,6 +76,17 @@
       "minecraft:entity_spawned": {
         "sequence": [
           {
+            "queue_command": {
+              "command": [
+                "tag @p add transport111",
+                "playsound sdc.bilebomb.throw @a ~~~ 1 1",
+                "particle nacal_sdc:transport_land",
+                "effect @p absorption 20 2 true",
+                "summon nacal_tac:transport_stay ~ ~-0.5 ~"
+              ]
+            }
+          },
+          {
             "add": { "component_groups": [ "transport_1" ] },
             "filters": {
               "all_of": [
@@ -130,8 +141,8 @@
           "command": [
             "playsound mob.endermen.portal @a ~~~",
             "playsound tac.trans @a ~~~",
-            "execute @e[r=6,family=!tac,family=!tool,type=!ender_dragon,c=3,tag=!transport111] ~~~ particle nacal_sdc:transport_land",
-            "execute @e[r=6,family=!tac,family=!tool,type=!ender_dragon,c=3,tag=!transport111] ~~~ particle nacal_tac:circle_transport ~ ~0.5 ~",
+            "execute as @e[r=6,family=!tac,family=!tool,type=!ender_dragon,c=3,tag=!transport111] positioned ~~~ run particle nacal_sdc:transport_land",
+            "execute as @e[r=6,family=!tac,family=!tool,type=!ender_dragon,c=3,tag=!transport111] positioned ~~~ run particle nacal_tac:circle_transport ~ ~0.5 ~",
             
             "title @a[tag=transport111] actionbar §l§d已传送§r @e[r=6,family=!tac,family=!tool,type=!ender_dragon,c=3,tag=!transport111]",
 

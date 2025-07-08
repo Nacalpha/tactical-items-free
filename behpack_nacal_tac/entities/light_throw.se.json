@@ -105,7 +105,7 @@
           "command": [
             "playsound tac.light @a[r=32] ~~~ 1 1 0.2",
             "fill ~-2 ~-2 ~-2 ~2 ~1.5 ~2 light_block 15 replace air 0",
-            "summon nacal_tac:light_stay"
+            "summon nacal_tac:light_stay ~ ~0.8 ~"
           ]
         }
       },
@@ -118,7 +118,7 @@
         "queue_command": {
           "command": [
             "playsound tac.light @a[r=32] ~~~ 1 1 0.2",
-            "fill ~-0.5 ~-0.4 ~-0.5 ~0.5 ~0.0 ~0.5 torch 0 replace air 0",
+            "fill ~-0.5 ~ ~-0.5 ~1 ~0.0 ~0.5 torch 0 replace air 0",
             "particle nacal_tac:light ~ ~0.5 ~"
           ]
         }

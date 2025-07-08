@@ -96,8 +96,8 @@
       "circle": {
         "queue_command": {
           "command": [
-            "execute @s[scores={shellraidcount=0..}] ~~~ tp @s ~~~",
-            "execute @s[scores={shellraidcount=0..}] ~~~ scoreboard players remove @s shellraidcount 1",
+            "execute as @s[scores={shellraidcount=0..}] positioned ~~~ run tp @s ~~~",
+            "execute as @s[scores={shellraidcount=0..}] positioned ~~~ run scoreboard players remove @s shellraidcount 1",
             "event entity @s[scores={shellraidcount=..-1}] start_fall"
           ]
         }

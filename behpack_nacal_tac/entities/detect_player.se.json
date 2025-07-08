@@ -63,13 +63,13 @@
       "tp": {
         "queue_command": {
           "command": [
-            "tp @s @e[c=1,r=1.5,type=player]",
+            "tp @s @e[c=1,r=1.5,type=player,tag=!not_detect]",
             "effect @s invisibility 0 255 true",
 
             "scoreboard players add @s detectfootstep 1",
-            "execute @s[scores={detectfootstep=5}] ~~~ summon nacal_tac:detect_playerstep",
+            "execute as @s[scores={detectfootstep=5}] positioned ~~~ run summon nacal_tac:detect_playerstep",
 
-            "execute @s[scores={detectfootstep=6..}] ~~~ scoreboard players set @s detectfootstep 0"
+            "execute as @s[scores={detectfootstep=6..}] positioned ~~~ run scoreboard players set @s detectfootstep 0"
           ]
         }
       }

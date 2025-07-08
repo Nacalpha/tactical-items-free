@@ -61,7 +61,7 @@
       "raid_spawn": {
         "queue_command": {
           "command": [
-            "summon nacal_tac:raid_single ~ ~-1 ~ raid",
+            "summon nacal_tac:raid_single ~ ~-1 ~ ~~ raid",
             "tp ~4.5 ~ ~"
           ]
         }

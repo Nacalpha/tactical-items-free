@@ -70,6 +70,15 @@
       "minecraft:entity_spawned": {
         "sequence": [
           {
+            "queue_command": {
+              "command": [
+                "playsound sdc.bilebomb.throw @a ~~~ 1 1",
+                "tag @e remove mineset_thrower",
+                "tag @p add mineset_thrower"
+              ]
+            }
+          },
+          {
             "add": { "component_groups": [ "mineset_first" ] },
             "filters": {
               "all_of": [
@@ -104,7 +113,7 @@
         "queue_command": {
           "command": [
             "playsound tac.hit_light @a ~~~ 1 1",
-            "summon nacal_tac:mineset_stay ~ ~0.5 ~ special_spawn"
+            "summon nacal_tac:mineset_stay ~ ~0.5 ~ ~~ special_spawn"
           ]
         }
       },
@@ -117,7 +126,7 @@
         "queue_command": {
           "command": [
             "playsound tac.hit_light @a ~~~ 1 1",
-            "summon nacal_tac:mineset_stay ~ ~0.5 ~ special_spawn_2"
+            "summon nacal_tac:mineset_stay ~ ~0.5 ~ ~~ special_spawn_2"
           ]
         }
       }

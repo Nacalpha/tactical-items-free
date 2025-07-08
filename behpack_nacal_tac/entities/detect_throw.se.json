@@ -45,6 +45,42 @@
       }
     },
     "events": {
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "queue_command": {
+              "command": [
+                "tag @e remove detectdbsbibad",
+                "tag @p add detectdbsbibad"
+              ]
+            }
+          }/* ,
+          {
+            "add": { "component_groups": [ "detect_normal" ] },
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_sneaking",
+                  "subject": "other",
+                  "value": false
+                }
+              ]
+            }
+          },
+          {
+            "add": { "component_groups": [ "detect_long" ] },
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_sneaking",
+                  "subject": "other",
+                  "value": true
+                }
+              ]
+            }
+          } */
+        ]
+      },
       "detect_die": {
         "add": {
           "component_groups": [
@@ -53,7 +89,7 @@
         },
         "queue_command": {
           "command": [
-            "summon nacal_tac:detect_stay",
+            "summon nacal_tac:detect_stay  ~ ~0.8 ~",
             "playsound tac.hit_light @a ~~~ 1 1"
           ]
         }

@@ -118,8 +118,8 @@
           "command": [
             "playsound tac.light @a[r=32] ~~~ 1 1 0.2",
             "playsound tac.blow_set @a[r=30] ~~~ 1 1 0.8",
-            "particle nacal_tac:blow_circle ~ ~0.2 ~",
-            "particle nacal_sdc:blow_bigcircle_2 ~ ~0.2 ~",
+            "particle nacal_tac:blow_circle ~ ~1.2 ~",
+            "particle nacal_sdc:blow_bigcircle_2 ~ ~1.2 ~",
 
             "effect @a[r=5] slow_falling 60 1 true",
             "effect @a[r=5] jump_boost 60 3 true"

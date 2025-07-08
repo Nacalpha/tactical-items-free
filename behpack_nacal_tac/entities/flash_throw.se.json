@@ -45,6 +45,43 @@
       }
     },
     "events": {
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "queue_command": {
+              "command": [
+                "tag @e remove flash_thrower",
+                "tag @p add flash_thrower"
+              ]
+            }
+          }/* ,
+          {
+            "trigger": "can_bounce",
+            "add": { "component_groups": [ "normal" ] },
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_sneaking",
+                  "subject": "other",
+                  "value": false
+                }
+              ]
+            }
+          },
+          {
+            "add": { "component_groups": [ "void" ] },
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_sneaking",
+                  "subject": "other",
+                  "value": true
+                }
+              ]
+            }
+          } */
+        ]
+      },
       "flash_die": {
         "add": {
           "component_groups": [
@@ -54,7 +91,7 @@
         "queue_command": {
           "command": [
             "playsound tac.hit_light @a ~~~ 1 1",
-            "execute @a[r=8,m=!c] ~~~ particle nacal_tac:flash_circle ~ ~1 ~",
+            "execute as @a[r=8,m=!c] at @s run particle nacal_tac:flash_circle ~ ~1 ~",
             "summon nacal_tac:flash_stay",
             "particle nacal_tac:flash_circle ~ ~0.5 ~"
           ]

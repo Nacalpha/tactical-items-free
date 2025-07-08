@@ -121,9 +121,10 @@
         "queue_command": {
           "command": [
             "tp @s ~ ~ ~",
-            "execute @e[r=12,family=!transport,family=!tac,type=!player,type=!arrow,type=!item,type=!thrown_trident,type=!armor_stand,type=!evocation_fang,type=!lightning_bolt,type=!fireworks_rocket,type=!snowball,type=!egg,type=!xp_bottle,type=!xp_orb,type=!ender_pearl,type=!splash_potion,type=!fishing_hook] ~~~ tp @s ^ ^0.02 ^0.2 facing @e[type=nacal_tac:force_stay,c=1,rm=0.2] true",
-            "ride @a[m=!c,x=~-6,y=~-3,z=~-6,dx=12,dy=5,dz=12] summon_ride nacal_tac:force_tone skip_riders",
-            "title @a[m=c,x=~-6,y=~-3,z=~-6,dx=12,dy=5,dz=12] actionbar §l创造模式免疫吸引"
+            "execute as @e[r=12,family=!transport,tag=!not_force,family=!tac,type=!player,type=!arrow,type=!item,type=!thrown_trident,type=!armor_stand,type=!evocation_fang,type=!lightning_bolt,type=!fireworks_rocket,type=!snowball,type=!egg,type=!xp_bottle,type=!xp_orb,type=!ender_pearl,type=!splash_potion,type=!fishing_hook] at @s facing entity @e[c=1,type=nacal_tac:force_stay] eyes run tp @s ^ ^0.02 ^0.2 facing @e[type=nacal_tac:force_stay,c=1,rm=0.2] true",
+            "ride @a[m=!c,tag=!not_force,x=~-6,y=~-3,z=~-6,dx=12,dy=5,dz=12] summon_ride nacal_tac:force_tone skip_riders",
+            "title @a[m=c,x=~-6,y=~-3,z=~-6,dx=12,dy=5,dz=12] actionbar §l创造模式免疫吸引",
+            "title @a[tag=not_force,x=~-6,y=~-3,z=~-6,dx=12,dy=5,dz=12] actionbar §l免疫吸引"
           ]
         }
       }

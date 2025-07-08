@@ -101,7 +101,7 @@
           "command": [
             "particle nacal_sdc:m79dust",
             "particle nacal_sdc:burn",
-            "fill ~-3.5 ~-3 ~-3.5 ~2.5 ~3.5 ~3.5 air 0 replace fire 0"
+            "fill ~-3.5 ~-3 ~-3.5 ~2.5 ~3.5 ~3.5 air replace fire "
           ]
         }
       },
@@ -121,10 +121,10 @@
             "damage @e[family=jar,r=3.5] 1 fire",
             "execute @e[family=jar,r=3.5] ~~~ particle nacal_city:molotov_flame_small ~ ~0.5 ~",
  */
-            "damage @e[r=3.5,family=!tac] 3 fire",
-            "damage @e[r=3.5,family=!tac,type=!ender_dragon] 1 suicide",
+            "damage @e[r=3.5,family=!tac,tag=!not_flame] 3 fire",
+            "damage @e[r=3.5,family=!tac,type=!ender_dragon,tag=!not_flame] 1 self_destruct",
             "kill @e[r=3,type=item]",
-            "execute @e[r=3.5,family=!tac] ~~~ particle nacal_city:molotov_flame_small ~ ~1 ~"
+            "execute as @e[r=3.5,family=!tac] positioned ~~~ run particle nacal_city:molotov_flame_small ~ ~1 ~"
           ]
         }
       }

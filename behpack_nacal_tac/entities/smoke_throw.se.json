@@ -70,6 +70,15 @@
       "minecraft:entity_spawned": {
         "sequence": [
           {
+            "queue_command": {
+              "command": [
+                "playsound sdc.bilebomb.throw @a ~~~ 1 1",
+                "tag @e remove smoke_thrower",
+                "tag @p add smoke_thrower"
+              ]
+            }
+          },
+          {
             "add": { "component_groups": [ "smoke_wall" ] },
             "filters": {
               "all_of": [
@@ -108,7 +117,7 @@
             "summon nacal_tac:smoke_stay ~~~",
             //"particle nacal_tac:smoke ~ ~0.5 ~",
             //"particle nacal_tac:smoke_spit ~ ~1 ~",
-            "fill ~-3 ~-3 ~-3 ~3 ~3 ~3 air 0 replace fire 0"
+            "fill ~-3 ~-3 ~-3 ~3 ~3 ~3 air replace fire"
           ]
         }
       },
@@ -124,7 +133,7 @@
             "playsound tac.smoke @a ~~~ 1 1",
             "particle nacal_tac:smoke_group ~ ~0.5 ~",
             "particle nacal_tac:smoke_spit ~ ~1 ~",
-            "fill ~-4 ~-4 ~-4 ~4 ~4 ~4 air 0 replace fire 0"
+            "fill ~-4 ~-4 ~-4 ~4 ~4 ~4 air replace fire"
           ]
         }
       }

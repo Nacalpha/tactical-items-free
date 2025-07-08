@@ -47,7 +47,7 @@
 
             "scoreboard objectives add minesetsaubafa dummy mineset123",
             "scoreboard players add @e[type=nacal_tac:mineset_clear] minesetsaubafa 0",
-            "execute @e[r=16,type=nacal_tac:mineset_stay] ~~~ scoreboard players add @e[type=nacal_tac:mineset_clear] minesetsaubafa 1",
+            "execute as @e[r=16,type=nacal_tac:mineset_stay] positioned ~~~ run scoreboard players add @e[type=nacal_tac:mineset_clear] minesetsaubafa 1",
             "titleraw @p[r=4] actionbar {\"rawtext\":[{\"text\":\"§l§f已清理 §b\"},{\"score\":{\"name\":\"@s\" ,\"objective\":\"minesetsaubafa\"}},{\"text\":\"§f 个霜息骨牙\"} ] }",
             "event entity @e[r=16,type=nacal_tac:mineset_stay] die",
 

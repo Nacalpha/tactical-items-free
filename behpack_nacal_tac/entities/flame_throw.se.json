@@ -124,7 +124,7 @@
             //"particle nacal_sdc:burn",
             //"fill ~-1.5 ~-2 ~-1.5 ~1.5 ~1.5 ~1.5 fire 0 replace air 0",
             //"fill ~-1.5 ~-2 ~-1.5 ~1.5 ~1.5 ~1.5 fire 0 replace snow_layer",
-            "summon nacal_tac:flame_stay"
+            "summon nacal_tac:flame_stay ~ ~1 ~"
           ]
         }
       },
@@ -138,9 +138,9 @@
           "command": [
             "playsound tac.flame @a ~~~ 1 1",
             "particle nacal_sdc:burn",
-            "fill ~-1.5 ~-2 ~-1.5 ~1.5 ~1.5 ~1.5 fire 0 replace air 0",
-            "fill ~-1.5 ~-2 ~-1.5 ~1.5 ~1.5 ~1.5 fire 0 replace snow_layer",
-            "summon nacal_tac:flame_stay ~~~ blockfire"
+            "fill ~-1.5 ~-2 ~-1.5 ~1.5 ~1.5 ~1.5 fire replace air",
+            "fill ~-1.5 ~-2 ~-1.5 ~1.5 ~1.5 ~1.5 fire replace snow_layer",
+            "summon nacal_tac:flame_stay ~~~~~ blockfire"
           ]
         }
       },
