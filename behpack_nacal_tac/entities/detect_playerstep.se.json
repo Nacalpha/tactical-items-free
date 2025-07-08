@@ -1,0 +1,52 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:detect_playerstep",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "detect_die": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tac" ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:is_baby": {},
+      "minecraft:ageable": {
+        "duration": 1.4,
+        "grow_up": {
+          "event": "detect_die"
+        }
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      }
+
+      //behavivors
+
+    },
+
+    "events": {
+      "detect_die": {
+        "add": {
+          "component_groups": [
+            "detect_die"
+          ]
+        }
+      }
+    }
+  }
+}

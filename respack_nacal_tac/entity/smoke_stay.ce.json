@@ -1,0 +1,34 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nacal_tac:smoke_stay",
+      "scripts": {
+        "animate": [
+          "smoke_deploy"
+        ],
+        "should_update_bones_and_effects_offscreen":true,
+        "should_update_effects_offscreen":true
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/smoke"
+      },
+      "geometry": {
+        "default": "geometry.smoke"
+      },
+      "animations": {
+        "smoke_deploy":"animation.throwitems.smoke_deploy"
+      },
+      "particle_effects": {
+        "smoke_spit_1":"nacal_tac:smoke_spit_single"
+      },
+      "sound_effects": {
+        "smoke":"tac.smoke"
+      },
+      "render_controllers": [ "controller.render.com" ]
+    }
+  }
+}

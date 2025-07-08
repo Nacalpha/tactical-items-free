@@ -1,0 +1,136 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:normal_throw",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "component_groups": {
+      "normal_die": {
+        "minecraft:instant_despawn": {}
+      },
+      "normal_die_hit": {
+        "minecraft:explode": {
+          "fuse_length": -1,
+          "fuse_lit": true,
+          "power": 4,
+          "causes_fire": false,
+          "breaks_blocks": false
+        }
+      },
+      "normal_1":{
+        "minecraft:projectile": {
+          "on_hit": {
+            "definition_event": {
+              "affect_projectile": true,
+              "event_trigger": {
+                "event": "normal_die"
+              }
+            },
+            "remove_on_hit": {}
+          },
+          "power": 1.4,
+          "gravity": 0.05,
+          "angle_offset": 0
+        }
+      },
+      "normal_2":{
+        "minecraft:projectile": {
+          "on_hit": {
+            "definition_event": {
+              "affect_projectile": true,
+              "event_trigger": {
+                "event": "normal_die_hit"
+              }
+            }
+          },
+          "power": 1.4,
+          "gravity": 0.05,
+          "angle_offset": 0
+        }
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.3,
+        "height": 0.3
+      },
+      
+      "minecraft:physics": {},
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "add": { "component_groups": [ "normal_1" ] },
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_sneaking",
+                  "subject": "other",
+                  "value": false
+                }
+              ]
+            }
+          },
+          {
+            "add": { "component_groups": [ "normal_2" ] },
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_sneaking",
+                  "subject": "other",
+                  "value": true
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "normal_die": {
+        "add": {
+          "component_groups": [
+            "normal_die"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "summon nacal_tac:normal_stay",
+            "playsound tac.hit_heavy @a ~~~ 1 1"
+          ]
+        }
+      },
+      "normal_die_hit": {
+        "add": {
+          "component_groups": [
+            "normal_die_hit"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "playsound tac.he @a ~~~ 1 1 0.2",
+            //"particle nacal_tac:tnnk_dust",
+            "camerashake add @a[tag=!noshake,r=16] 0.3 0.2 positional",
+            //"particle nacal_sdc:tnnkdust ~ ~0.5 ~",
+            //"particle nacal_city:smoke_circle ~ ~-0.2 ~"
+            //"particle nacal_tac:burn_2 ~ ~0.2 ~",
+
+            "particle nacal_tac:explode_dust1 ~ ~ ~",
+            "particle nacal_tac:explode_circle ~ ~ ~",
+            "particle nacal_tac:explode_smoke2 ~ ~ ~"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.secondary": {
+      "geometry": "Geometry.secondary",
+      "materials": [ { "*": "Material.secondary" } ],
+      "textures": [ "Texture.secondary" ]
+    }
+  }
+}

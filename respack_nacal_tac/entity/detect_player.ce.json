@@ -1,0 +1,32 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nacal_tac:detect_player",
+      "scripts": {
+        "animate": [
+          "detect_entity",
+          "detect_entity_2",
+          "detect_entity_3",
+          "detect_entity_4"
+        ]
+      },
+      "materials": {
+        "default": "nacal_tac_detect"
+      },
+      "textures": {
+        "default": "textures/entity/detect_player"
+      },
+      "geometry": {
+        "default": "geometry.detect_entity"
+      },
+      "animations": {
+        "detect_entity": "animation.detect_entity",
+        "detect_entity_2": "animation.detect_entity_2",
+        "detect_entity_3": "animation.detect_entity_3",
+        "detect_entity_4": "animation.detect_entity_4"
+      },
+      "render_controllers": [ "controller.render.com" ]
+    }
+  }
+}

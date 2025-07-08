@@ -1,0 +1,32 @@
+﻿{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "nacal_tac:detect",
+      "materials": {
+        "default": "entity_emissive"
+      },
+      "textures": {
+        "default": "textures/entity/glow/detect"
+      },
+      "geometry": {
+        "default": "geometry.detect_item"
+      },
+      "animations": {
+        "third": "animation.wield_mainhand_big",
+        "first": "animation.first_person_wield_mainhand_big"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "third": "c.is_first_person == 0 "
+          },
+          {
+            "first": "c.is_first_person == 1 "
+          }
+        ]
+      },
+      "render_controllers": [ "controller.render.sdc_items" ]
+    }
+  }
+}

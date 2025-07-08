@@ -1,0 +1,37 @@
+﻿{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "nacal_tac:mimictac",
+      "materials": {
+        "default": "entity_emissive"
+      },
+      "textures": {
+        "default": "textures/entity/glow/mimictac"
+      },
+      "geometry": {
+        "default": "geometry.mimictac_item"
+      },
+      "animations": {
+        "third": "animation.wield_mainhand_big",
+        "first": "animation.first_person_wield_mainhand_big",
+
+        "mimic1":"animation.mimictac_item.mimic1",
+        "mimic2":"animation.mimictac_item.mimic2"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "third": "c.is_first_person == 0 "
+          },
+          {
+            "first": "c.is_first_person == 1 "
+          },
+          "mimic1",
+          "mimic2"
+        ]
+      },
+      "render_controllers": [ "controller.render.sdc_items" ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nacal_tac:mineset_stay",
+      "scripts": {
+        "animate": [
+          {
+            "mineset_1": "query.variant == 0"
+          },
+          {
+            "mineset_2": "query.variant == 1"
+          }
+        ]
+      },
+      "particle_effects": {
+        "prepare": "nacal_tac:mineset_prepare"
+      },
+      "materials": {
+        "default": "guardian_ghost"
+      },
+      "textures": {
+        "skin0": "textures/entity/mineset",
+        "skin1": "textures/entity/mineset_1"
+      },
+      "geometry": {
+        "default": "geometry.mineset"
+      },
+      "animations": {
+        "mineset_1": "animation.mineset_1",
+        "mineset_2": "animation.mineset_2"
+      },
+      "render_controllers": [ "controller.render.mineset" ],
+      "spawn_egg": {
+        "texture": "mineset_single"
+      }
+    }
+  }
+}

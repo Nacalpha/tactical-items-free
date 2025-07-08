@@ -1,0 +1,26 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nacal_tac:detect_stay",
+      "scripts": {
+        "animate": [
+          "down"
+        ]
+      },
+      "materials": {
+        "default": "entity_emissive"
+      },
+      "textures": {
+        "default": "textures/entity/glow/detect"
+      },
+      "geometry": {
+        "default": "geometry.detect"
+      },
+      "animations": {
+        "down": "animation.throwitems.down"
+      },
+      "render_controllers": [ "controller.render.com" ]
+    }
+  }
+}

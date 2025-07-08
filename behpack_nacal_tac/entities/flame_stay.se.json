@@ -1,0 +1,133 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:flame_stay",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "flame_die": {
+        "minecraft:instant_despawn": {}
+      },
+      "entityfire":{
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:ageable": {
+          "duration": 10,
+          "grow_up": {
+            "event": "flame_die"
+          }
+        },
+        "minecraft:timer": {
+          "time": 0.2,
+          "time_down_event": {
+            "event": "flame_attack"
+          }
+        },
+        "minecraft:collision_box": {
+          "width": 0.000,
+          "height": 0.000
+        },
+        "minecraft:physics": {}
+      },
+      "blockfire":{
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:timer": {
+          "time": 0.05,
+          "looping": true,
+          "time_down_event": {
+            "event": "stay"
+          }
+        },
+        "minecraft:ageable": {
+          "duration": 10,
+          "grow_up": {
+            "event": "flame_die"
+          }
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tac" ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:is_baby": {}
+
+
+      //behavivors
+
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "entityfire"
+          ]
+        }
+      },
+      "blockfire": {
+        "add": {
+          "component_groups": [
+            "blockfire"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "gamerule dofiretick false"
+          ]
+        }
+      },
+      "flame_die": {
+        "add": {
+          "component_groups": [
+            "flame_die"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "particle nacal_sdc:m79dust",
+            "particle nacal_sdc:burn",
+            "fill ~-3.5 ~-3 ~-3.5 ~2.5 ~3.5 ~3.5 air 0 replace fire 0"
+          ]
+        }
+      },
+      "stay": {
+        "run_command": {
+          "command": [
+            "tp @s ~~~"
+          ]
+        }
+      },
+      "flame_attack":{
+        "run_command": {
+          "command": [
+/*             "damage @e[family=player,r=3.5] 1 fire",
+            "execute @e[family=player,r=3.5] ~~~ particle nacal_city:molotov_flame_small ~ ~1 ~",
+
+            "damage @e[family=jar,r=3.5] 1 fire",
+            "execute @e[family=jar,r=3.5] ~~~ particle nacal_city:molotov_flame_small ~ ~0.5 ~",
+ */
+            "damage @e[r=3.5,family=!tac] 3 fire",
+            "damage @e[r=3.5,family=!tac,type=!ender_dragon] 1 suicide",
+            "kill @e[r=3,type=item]",
+            "execute @e[r=3.5,family=!tac] ~~~ particle nacal_city:molotov_flame_small ~ ~1 ~"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nacal_tac:normal_stay",
+      "scripts": {
+        "animate": [
+          "down",
+          "smoke"
+        ],
+        "should_update_bones_and_effects_offscreen":true
+      },
+      "materials": {
+        "default": "entity_emissive"
+      },
+      "textures": {
+        "default": "textures/entity/glow/normal"
+      },
+      "geometry": {
+        "default": "geometry.normal"
+      },
+      "animations": {
+        "down": "animation.throwitems.down",
+        "smoke":"animation.throwitems.normal_smoke"
+      },
+      "particle_effects": {
+        "smoke":"nacal_sdc:jar_smoke"
+      },
+      "render_controllers": [ "controller.render.com" ]
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:normal_stay",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "normal_die": {
+        "minecraft:explode": {
+          "fuse_length": -1,
+          "fuse_lit": true,
+          "power": 4,
+          "causes_fire": false,
+          "breaks_blocks": false
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tac" ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:ageable": {
+        "duration": 2,
+        "grow_up": {
+          "event": "normal_die"
+        }
+      },
+      "minecraft:collision_box": {
+        "width": 0.000,
+        "height": 0.000
+      },
+      "minecraft:physics": {}
+
+      //behavivors
+
+    },
+
+    "events": {
+      "normal_die": {
+        "add": {
+          "component_groups": [
+            "normal_die"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "playsound tac.he @a ~~~ 1 1 0.2",
+            "particle nacal_tac:tnnk_dust",
+            "camerashake add @a[tag=!noshake,r=16] 0.3 0.2 positional",
+            "particle nacal_sdc:tnnkdust ~ ~0.5 ~",
+            "particle nacal_city:smoke_circle",
+            "particle nacal_tac:burn_2 ~ ~0.2 ~",
+
+            "particle nacal_tac:explode_dust1 ~ ~ ~",
+            "particle nacal_tac:explode_circle ~ ~ ~",
+            "particle nacal_tac:explode_smoke2 ~ ~ ~"
+          ]
+        }
+      }
+    }
+  }
+}

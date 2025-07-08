@@ -1,0 +1,44 @@
+﻿{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "nacal_tac:shellraid",
+      "materials": {
+        "default": "entity_emissive",
+        "secondary":"nacal_tac_detect"
+      },
+      "textures": {
+        "default": "textures/entity/glow/shellraid_texture",
+        "secondary": "textures/entity/secondary/shellraid"
+      },
+      "geometry": {
+        "default": "geometry.shellraid_item",
+        "secondary": "geometry.secondary"
+      },
+      "animations": {
+        "third": "animation.wield_mainhand_big",
+        "first": "animation.first_person_wield_mainhand_big",
+        "shellraid_item": "animation.shellraid_item",
+
+        "secondary_1":"animation.secondary.set1",
+        "secondary_2":"animation.secondary.set2",
+        "secondary_control":"controller.animation.secondary",
+        "secondary_root":"animation.secondary.root"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "third": "c.is_first_person == 0 "
+          },
+          {
+            "first": "c.is_first_person == 1 "
+          },
+          "shellraid_item",
+          "secondary_control",
+          "secondary_root"
+        ]
+      },
+      "render_controllers": [ "controller.render.sdc_items", { "controller.render.secondary":"c.is_first_person" } ]
+    }
+  }
+}

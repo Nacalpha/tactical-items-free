@@ -1,0 +1,66 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:transport_stay",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "godie": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tac","transport" ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:is_baby": {},
+      "minecraft:ageable": {
+        "duration": 8,
+        "grow_up": {
+          "event": "godie"
+        }
+      },
+      "minecraft:timer": {
+        "time": 0.5,
+        "looping": true,
+        "time_down_event": {
+          "event": "circle"
+        }
+      },
+      "minecraft:collision_box": {
+        "width": 0.000,
+        "height": 0.000
+      }
+
+      //behavivors
+
+    },
+
+    "events": {
+      "godie": {
+        "add": {
+          "component_groups": [
+            "godie"
+          ]
+        }
+      },
+      "circle":{
+        "run_command": {
+          "command": [
+            "particle nacal_tac:circle_transport ~ ~0.5 ~"
+          ]
+        }
+      }
+    }
+  }
+}

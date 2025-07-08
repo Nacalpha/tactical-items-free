@@ -1,0 +1,11 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nacal_tac:mineset_clear",
+      "spawn_egg": {
+        "texture": "mineset_clear"
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.all_tac": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "check_tag": "query.variant == 1"
+            }
+          ]
+        },
+        "check_tag": {
+          "on_entry": [
+            "/execute @a[tag=!tac_is_ok] ~~~ execute @e[type=nacal_tac:all_tac] ~~~ say §l§c请看介绍视频，打开存档的实验玩法“假日创造者功能”，组件才能正常工作"
+          ]
+        } 
+      }
+    }
+  }
+}

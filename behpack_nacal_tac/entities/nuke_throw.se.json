@@ -1,0 +1,68 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:nuke_throw",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "component_groups": {
+      "nuke_die": {
+        "minecraft:explode": {
+          "fuse_length": -1,
+          "fuse_lit": true,
+          "power": 15,
+          "causes_fire": false,
+          "breaks_blocks": true,
+          "destroy_affected_by_griefing": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.3,
+        "height": 0.3
+      },
+      "minecraft:projectile": {
+        "on_hit": {
+          "definition_event": {
+            "affect_projectile": true,
+            "event_trigger": {
+              "event": "nuke_die"
+            }
+          }
+        },
+        "power": 1.4,
+        "gravity": 0.05,
+        "angle_offset": 0
+      },
+      "minecraft:physics": {},
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "events": {
+      "nuke_die": {
+        "add": {
+          "component_groups": [
+            "nuke_die"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "playsound tac.metalpipe @a ~~~ 1 1 0.5",
+            "camerashake add @a[tag=!noshake,r=64] 0.3 0.2 positional",
+            "particle nacal_tac:tnnk_dust_2_tac",
+            "particle nacal_sdc:m79dust_2_tac"
+          ]
+        }
+      }
+    }
+  }
+}

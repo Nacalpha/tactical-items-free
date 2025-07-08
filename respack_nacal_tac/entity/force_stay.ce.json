@@ -1,0 +1,28 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nacal_tac:force_stay",
+      "scripts": {
+        "animate": [
+          "force_stay_controller"
+        ]
+      },
+      "materials": {
+        "default": "entity_emissive"
+      },
+      "textures": {
+        "default": "textures/entity/glow/force"
+      },
+      "geometry": {
+        "default": "geometry.force"
+      },
+      "animations": {
+        "force_1": "animation.force_1",
+        "force_2": "animation.force_2",
+        "force_stay_controller": "controller.animation.force_stay"
+      },
+      "render_controllers": [ "controller.render.com" ]
+    }
+  }
+}

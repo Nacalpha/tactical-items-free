@@ -1,0 +1,144 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:shellraid_single",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "component_groups": {
+      "boom": {
+        "minecraft:explode": {
+          "fuseLength": -1,
+          "fuseLit": true,
+          "power": 4,
+          "causesFire": false,
+          "breaks_blocks": false
+        }
+      },
+      "start_fall": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "ads_detect" ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.3,
+        "height": 0.3
+      },
+      "minecraft:variant": {
+        "value": 0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:projectile": {
+        "on_hit": {
+          "impact_damage": {
+            "damage": 10,
+            "knockback": false
+          },
+          "definition_event": {
+            "affect_projectile": true,
+            "affect_shooter": false,
+            "affect_target": false,
+            "affect_splash_area": false,
+            "event_trigger": {
+              "event": "hit_on"
+            }
+          },
+          "stick_in_ground": {
+            "shake_time": 1
+          }
+        },
+        "power": 1.4,
+        "gravity": 0.05,
+        "angle_offset": -10,
+        "hit_sound": "none",
+        "liquid_inertia": 1
+      },
+      "minecraft:timer": {
+        "time": 0.05,
+        "time_down_event": {
+          "event": "circle"
+        }
+      },
+      "minecraft:physics": {},
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "run_command": {
+          "command": [
+            "scoreboard objectives add shellraidcount dummy shell",
+            "scoreboard players random @s shellraidcount 1 140"
+          ]
+        }
+      },
+      "circle": {
+        "run_command": {
+          "command": [
+            "execute @s[scores={shellraidcount=0..}] ~~~ tp @s ~~~",
+            "execute @s[scores={shellraidcount=0..}] ~~~ scoreboard players remove @s shellraidcount 1",
+            "event entity @s[scores={shellraidcount=..-1}] start_fall"
+          ]
+        }
+      },
+      "hit_on": {
+        "add": {
+          "component_groups": [
+            "boom"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "playsound tac.he @a ~~~ 1 1",
+            "particle nacal_tac:tnnk_dust",
+            "camerashake add @a[tag=!noshake,r=16] 0.3 0.2 positional",
+            "particle nacal_sdc:tnnkdust",
+
+            "particle nacal_tac:explode_circle ~ ~ ~"
+          ]
+        }
+      },
+      "start_fall": {
+        "add": {
+          "component_groups": [
+            "start_fall"
+          ]
+        },
+        "run_command": {
+          "command": [
+
+          ]
+        }
+      },
+      "godie":{
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+
+    }
+  }
+}

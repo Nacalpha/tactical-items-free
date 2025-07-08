@@ -1,0 +1,31 @@
+﻿{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nacal_tac:detect_throw",
+      "materials": {
+        "default": "entity_emissive"
+      },
+      "particle_effects": {
+        "line": "nacal_tac:shotline_orange_tac"
+      },
+      "textures": {
+        "default": "textures/entity/glow/detect"
+      },
+      "geometry": {
+        "default": "geometry.detect"
+      },
+      "render_controllers": [ "controller.render.arrow" ],
+      "animations": {
+        "move": "animation.throwitems.move",
+        "round": "animation.throwitems.round3"
+      },
+      "scripts": {
+        "animate": [
+          "move",
+          "round"
+        ]
+      }
+    }
+  }
+} 

@@ -1,0 +1,73 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:detect_entity",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "detect_die": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tac" ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:timer": {
+        "time": 0.05,
+        "time_down_event": {
+          "event": "tp"
+        }
+      },
+      "minecraft:is_baby": {},
+      "minecraft:ageable": {
+        "duration": 10,
+        "grow_up": {
+          "event": "detect_die"
+        }
+      },
+      "minecraft:collision_box": {
+        "width": 0.000,
+        "height": 0.000
+      }
+
+      //behavivors
+
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "run_command": {
+          "command": [
+            "playsound sdc.clip @a[r=32] ~~~ 1 1 0.1"
+          ]
+        }
+      },
+      "detect_die": {
+        "add": {
+          "component_groups": [
+            "detect_die"
+          ]
+        }
+      },
+      "tp": {
+        "run_command": {
+          "command": [
+            "tp @s @e[c=1,r=1.5,family=!tac,type=!arrow,type=!item,type=!thrown_trident,type=!armor_stand,type=!evocation_fang,type=!lightning_bolt,type=!fireworks_rocket,type=!snowball,type=!egg,type=!xp_bottle,type=!xp_orb,type=!ender_pearl,type=!splash_potion,type=!fishing_hook]",
+            "effect @s invisibility 0 255 true"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+      "controller.animation.prey_mimic_sheared": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {
+                "hit": "query.is_sheared"
+              },
+              {
+                "dead":"!query.is_alive"
+              }
+            ]
+          },
+          "hit": {
+            "on_entry": [
+              "@s remove_hit",
+              "/particle prey:mimic_3 ~ ~0.5 ~"
+            ],
+            "transitions": [
+                {
+                  "default": "!query.is_sheared"
+                },
+                {
+                  "dead":"!query.is_alive"
+                }
+            ]
+          },
+          "dead":{
+            "on_entry": [
+              //"/say dead",
+              "/particle prey:mimic_4 ~ ~0.5 ~"
+            ]
+          }
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,26 @@
+{
+  "materials": {
+    "version": "1.0.0",
+    "nacal_tac_detect:guardian_ghost": {
+      "depthFunc": "Always",
+      "+states": [ "Blending", "DisableCulling" ],
+      "blendDst": "One"
+    },
+    "nacal_tac_shellraid_laser:guardian_ghost": {
+      "+states": [ "Blending", "DisableCulling" ],
+      "blendDst": "One"
+    },
+    "nacal_customblend:entity_alphablend": {
+      "+defines": [
+          "USE_EMISSIVE"
+      ],
+      "+states": [
+          "Blending",
+          "DisableCulling",
+          "DisableDepthWrite",
+          "DisableAlphaWrite"
+      ],
+      "depthFunc": "Always"
+    }
+  }
+}

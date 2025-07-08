@@ -1,0 +1,107 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:healarea_stay",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "godie": {
+        "minecraft:instant_despawn": {}
+      },
+      "force_stage1": {
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:is_baby": {},
+        "minecraft:ageable": {
+          "duration": 1.0,
+          "grow_up": {
+            "event": "force_turn_stage2"
+          }
+        }
+      },
+      "force_stage2": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:is_baby": {},
+        "minecraft:ageable": {
+          "duration": 8.0,
+          "grow_up": {
+            "event": "godie"
+          }
+        },
+        "minecraft:timer": {
+          "time": 1,
+          "time_down_event": {
+            "event": "heal"
+          }
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tac" ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:collision_box": {
+        "width": 0.001,
+        "height": 0.001
+      },
+      "minecraft:physics": {}
+
+      //behavivors
+
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "force_stage2"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "tp @s ~ ~ ~",
+            "particle nacal_sdc:healarea_bigcircle_2 ~ ~ ~",
+            "particle nacal_sdc:healarea_bigcircle ~ ~ ~",
+            "particle nacal_tac:healarea_circle ~ ~ ~",
+            "playsound tac.healarea @a ~~~",
+            "effect @e[r=8,family=player] regeneration 1 4 true"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "godie"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "particle nacal_tac:healarea_circle ~ ~1 ~"
+          ]
+        }
+      },
+      "heal": {
+        "run_command": {
+          "command": [
+            "effect @e[r=8,family=player] regeneration 3 2 true",
+            "effect @e[r=8,family=player] resistance 3 1 true",
+            "particle nacal_sdc:healarea_bigcircle ~ ~ ~"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,174 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:shellraid_throw",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "component_groups": {
+      "shell_die": {
+        "minecraft:instant_despawn": {}
+      },
+      "shellraid_1":{
+        "minecraft:projectile": {
+          "on_hit": {
+            "definition_event": {
+              "affect_projectile": true,
+              "affect_shooter": false,
+              "affect_target": false,
+              "affect_splash_area": false,
+              "event_trigger": {
+                "event": "shell_die"
+              }
+            },
+            "remove_on_hit": {}
+          },
+          "power": 1.4,
+          "gravity": 0.05,
+          "angle_offset": 0,
+          "remove_on_hit": {}
+        }
+      },
+      "shellraid_2":{
+        "minecraft:projectile": {
+          "on_hit": {
+            "definition_event": {
+              "affect_projectile": true,
+              "affect_shooter": false,
+              "affect_target": false,
+              "affect_splash_area": false,
+              "event_trigger": {
+                "event": "shell_die_2"
+              }
+            },
+            "remove_on_hit": {}
+          },
+          "power": 1.4,
+          "gravity": 0.05,
+          "angle_offset": 0,
+          "remove_on_hit": {}
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "ads_detect"
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.3,
+        "height": 0.3
+      },
+      
+      "minecraft:physics": {},
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "add": { "component_groups": [ "shellraid_1" ] },
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_sneaking",
+                  "subject": "other",
+                  "value": false
+                }
+              ]
+            }
+          },
+          {
+            "add": { "component_groups": [ "shellraid_2" ] },
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_sneaking",
+                  "subject": "other",
+                  "value": true
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "shell_die": {
+        "add": {
+          "component_groups": [
+            "shell_die"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "playsound tac.hu @a[r=30] ~ ~ ~ 0.6 1",
+            "particle nacal_tac:shellraid_circle ~ ~0.2 ~",
+
+            //"summon nacal_tac:shellraid_sign ~~~",
+            //"summon nacal_tac:shellraid_sign ~~~",
+            //"summon nacal_tac:shellraid_sign ~~~",
+            //"summon nacal_tac:shellraid_sign ~~~",
+            //"summon nacal_tac:shellraid_sign ~~~",
+            "summon nacal_tac:shellraid_sign ~~~ shell",
+            "summon nacal_tac:shellraid_sign ~~~ shell",
+            "summon nacal_tac:shellraid_sign ~~~ shell",
+            "summon nacal_tac:shellraid_sign ~~~ shell",
+            "summon nacal_tac:shellraid_sign ~~~ shell",
+            "summon nacal_tac:shellraid_sign ~~~ shell",
+            "summon nacal_tac:shellraid_sign ~~~ shell",
+            "summon nacal_tac:shellraid_sign ~~~ shell",
+            "summon nacal_tac:shellraid_sign ~~~ shell",
+            "summon nacal_tac:shellraid_sign ~~~ shell"
+          ]
+        }
+      },
+      "shell_die_2": {
+        "add": {
+          "component_groups": [
+            "shell_die"
+          ]
+        },
+        "run_command": {
+          "command": [
+            // "say shellraid_2",
+            // "playsound tac.hu @a[r=30] ~ ~ ~ 0.6 1",
+            "particle nacal_tac:shellraid_circle ~ ~0.2 ~",
+            
+
+            "summon nacal_tac:shellraid_laser ~~~"
+            // //"summon nacal_tac:shellraid_sign ~~~",
+            // //"summon nacal_tac:shellraid_sign ~~~",
+            // //"summon nacal_tac:shellraid_sign ~~~",
+            // //"summon nacal_tac:shellraid_sign ~~~",
+            // "summon nacal_tac:shellraid_sign ~~~ shell",
+            // "summon nacal_tac:shellraid_sign ~~~ shell",
+            // "summon nacal_tac:shellraid_sign ~~~ shell",
+            // "summon nacal_tac:shellraid_sign ~~~ shell",
+            // "summon nacal_tac:shellraid_sign ~~~ shell",
+            // "summon nacal_tac:shellraid_sign ~~~ shell",
+            // "summon nacal_tac:shellraid_sign ~~~ shell",
+            // "summon nacal_tac:shellraid_sign ~~~ shell",
+            // "summon nacal_tac:shellraid_sign ~~~ shell",
+            // "summon nacal_tac:shellraid_sign ~~~ shell"
+          ]
+        }
+      },
+      "godie":{
+        "add": {
+          "component_groups": [
+            "shell_die"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12.0",
+	"animation_controllers": {
+		"controller.animation.force_stay": {
+			"initial_state": "stage1",
+			"states": {
+				"stage1": {
+					"blend_transition": 1,
+					"animations": [ "force_1" ],
+					"transitions": [
+						{
+							"stage2": "query.variant == 1"
+						}
+					]
+				},
+				"stage2": {
+					"blend_transition": 1,
+					"animations": [ "force_2" ],
+					"transitions": [
+						{
+							"stage1": "query.variant == 0"
+						}
+					]
+				}
+			}
+		}
+	}
+}

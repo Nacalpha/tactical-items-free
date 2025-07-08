@@ -1,0 +1,68 @@
+{
+  "resource_pack_name": "nacal_sdc",
+  "texture_name": "atlas.items",
+  "texture_data": {
+
+    "nacal_tac:book_tac": {
+      "textures": "textures/items/book_tac"
+    },
+
+    "elesmoke": {
+      "textures": "textures/items/elesmoke"
+    },
+    "mimictac": {
+      "textures": "textures/items/mimictac"
+    },
+    "normal": {
+      "textures": "textures/items/normal"
+    },
+    "nuke": {
+      "textures": "textures/items/nuke"
+    },
+    "healarea": {
+      "textures": "textures/items/healarea"
+    },
+    "transport": {
+      "textures": "textures/items/transport"
+    },
+    "detect": {
+      "textures": "textures/items/detect"
+    },
+    "raid": {
+      "textures": "textures/items/raid"
+    },
+    "smoke": {
+      "textures": "textures/items/smoke"
+    },
+    "flash": {
+      "textures": "textures/items/flash"
+    },
+    "flame": {
+      "textures": "textures/items/flame"
+    },
+    "light": {
+      "textures": "textures/items/light"
+    },
+    "force": {
+      "textures": "textures/items/force"
+    },
+    "shellraid": {
+      "textures": "textures/items/shellraid"
+    },
+    "blow": {
+      "textures": "textures/items/blow"
+    },
+    "mineset": {
+      "textures": "textures/items/mineset"
+    },
+    "mineset_single": {
+      "textures": "textures/items/mineset_single"
+    },
+    "mineset_clear": {
+      "textures": "textures/items/mineset_clear"
+    },
+    "egg_all_tac": {
+      "textures": "textures/items/egg_all_tac"
+    }
+  }
+}

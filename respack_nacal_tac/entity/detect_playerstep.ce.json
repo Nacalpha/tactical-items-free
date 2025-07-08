@@ -1,0 +1,26 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nacal_tac:detect_playerstep",
+      "scripts": {
+        "animate": [
+          "detect_playerstep"
+        ]
+      },
+      "materials": {
+        "default": "nacal_tac_detect"
+      },
+      "textures": {
+        "default": "textures/entity/detect_entity"
+      },
+      "geometry": {
+        "default": "geometry.detect_playerstep"
+      },
+      "animations": {
+        "detect_playerstep": "animation.detect_playerstep"
+      },
+      "render_controllers": [ "controller.render.com" ]
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+    "parent": "pages",
+    "icon": "textures/items/sign",
+    "title": "合成表",
+  "pages": [
+    {
+      "type": "textPage",
+      "content": "此章节记录了生存模式中各种战术投掷物的合成方式。\n\n§o战术道具在生存模式时也能给玩家不少的帮助，带上一些是个不错的主意。"
+    },
+    {
+      "type": "imagePage",
+      "subtitle": "静电旋涡",
+      "content": "制造短暂存在的雷暴云雾。\n\n§o瑞克五代",
+      "image": "textures/ui/myCustomBook/elesmoke",
+      "imageSize": [ 80.0, 40.0 ]
+    },
+    {
+      "type": "imagePage",
+      "subtitle": "罐中异魔",
+      "content": "攻击一切活物，随后自我毁灭。\n\n§oNot a Mimic",
+      "image": "textures/ui/myCustomBook/mimictac",
+      "imageSize": [ 80.0, 40.0 ]
+    },
+    {
+      "type": "imagePage",
+      "subtitle": "“有战术的”雷",
+      "content": "扔出去，爆炸。\n潜行：触爆模式\n\n§o过于普通以至于不知道如何介绍.jpg",
+      "image": "textures/ui/myCustomBook/normal",
+      "imageSize": [ 80.0, 40.0 ]
+    },
+    {
+      "type": "imagePage",
+      "subtitle": "装修大师",
+      "content": "别把房子炸咯。\n破坏方块受游戏规则mobgriefing控制。\n\n§o对周围造成毁灭性打击（各种意义上",
+      "image": "textures/ui/myCustomBook/nuke",
+      "imageSize": [ 80.0, 40.0 ]
+    },
+    {
+      "type": "imagePage",
+      "subtitle": "治疗立场",
+      "content": "远程投掷的治疗弹，治疗周围玩家。\n潜行：提供伤害吸收和抗性效果\n\n§o医生远离我。\n§9地图“生还者_空城II”联动款道具。",
+      "image": "textures/ui/myCustomBook/recipe12",
+      "imageSize": [ 80.0, 40.0 ]
+    },
+    {
+      "type": "imagePage",
+      "subtitle": "传送信标",
+      "content": "快速移动到落点。\n潜行：将落点附近实体传送过来\n\n§o失败品。\n§9地图“生还者_空城II”联动款道具。",
+      "image": "textures/ui/myCustomBook/recipe11",
+      "imageSize": [ 80.0, 40.0 ]
+    },
+    {
+      "type": "imagePage",
+      "subtitle": "霜息骨牙",
+      "content": "成组生成的伏击陷阱，使目标陷入漂浮。\n潜行：纵向安置\n\n§o防御型道具，在准备完成之后进入透明状态，适合进行伏击。\n§9地图“生还者_空城II”联动款道具。",
+      "image": "textures/ui/myCustomBook/recipe10",
+      "imageSize": [ 80.0, 40.0 ]
+    },
+    {
+      "type": "imagePage",
+      "subtitle": "上升立场",
+      "content": "能量场抬升周围的目标，持续20秒。\n潜行：提供跳跃提升和缓降效果\n\n§o也许可以用来爬山？",
+      "image": "textures/ui/myCustomBook/recipe9",
+      "imageSize": [ 80.0, 40.0 ]
+    },
+    {
+      "type": "imagePage",
+      "subtitle": "集束轰炸",
+      "content": "集中威力的轰炸，反应更迅速。\n潜行：持续穿透伤害射线\n\n§o再快点，再快点！说空袭太刮的都给我出来！\n§o副模式来自玩家投稿",
+      "image": "textures/ui/myCustomBook/recipe8",
+      "imageSize": [ 80.0, 40.0 ]
+    },
+    {
+      "type": "imagePage",
+      "subtitle": "引力奇点",
+      "content": "释放引力陷阱，摧毁捕获的敌人。\n\n§o“小纽特别吸啦”——硫磺酸磺\n§9地图“生还者_空城II”联动款道具。",
+      "image": "textures/ui/myCustomBook/recipe7",
+      "imageSize": [ 80.0, 40.0 ]
+    },
+    {
+      "type": "imagePage",
+      "subtitle": "侦测信号弹",
+      "content": "侦测周围玩家和实体的位置，持续10秒，可穿墙；对创造玩家无效。\n\n§o“敌敌敌敌敌人在这里”\n§9地图“生还者_空城II”联动款道具。",
+      "image": "textures/ui/myCustomBook/recipe1",
+      "imageSize": [ 80.0, 40.0 ]
+    },
+    {
+      "type": "imagePage",
+      "subtitle": "空袭信号弹",
+      "content": "在落点位置呼叫一波地毯式空袭。\n\n§o就算伤害不高，负面效果也够吃一壶了。",
+      "image": "textures/ui/myCustomBook/recipe2",
+      "imageSize": [ 80.0, 40.0 ]
+    },
+    {
+      "type": "imagePage",
+      "subtitle": "照明信号弹",
+      "content": "生成临时照明区域，持续30秒。\n潜行：在落点放置火把（不消失）\n\n§o限时的可远程投掷火把。",
+      "image": "textures/ui/myCustomBook/recipe3",
+      "imageSize": [ 80.0, 40.0 ]
+    },
+    {
+      "type": "imagePage",
+      "subtitle": "烟雾弹",
+      "content": "生成一大片烟雾墙，遮挡视线。\n潜行：生成旧版烟雾团\n\n§o烟雾墙的方向始终面向投掷者，尽量避免了本地计算烟雾位置不同的问题。",
+      "image": "textures/ui/myCustomBook/recipe4",
+      "imageSize": [ 80.0, 40.0 ]
+    },
+    {
+      "type": "imagePage",
+      "subtitle": "闪光弹",
+      "content": "对范围内的玩家造成闪光效果，对怪物造成缓慢效果；对创造玩家无效。\n\n§o闪光时长真的短么？",
+      "image": "textures/ui/myCustomBook/recipe5",
+      "imageSize": [ 80.0, 40.0 ]
+    },
+    {
+      "type": "imagePage",
+      "subtitle": "燃烧弹",
+      "content": "生成一片火焰，持续10秒后熄灭。\n潜行：生成旧版火焰方块\n\n§o不再使用方块火，环保耐用（？）",
+      "image": "textures/ui/myCustomBook/recipe6",
+      "imageSize": [ 80.0, 40.0 ]
+    }
+  ]    
+}

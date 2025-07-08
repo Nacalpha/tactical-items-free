@@ -1,0 +1,133 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:smoke_throw",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "component_groups": {
+      "raid_die": {
+        "minecraft:instant_despawn": {}
+      },
+      "smoke_wall":{
+        "minecraft:projectile": {
+          "on_hit": {
+            "definition_event": {
+              "affect_projectile": true,
+              "affect_shooter": false,
+              "affect_target": false,
+              "affect_splash_area": false,
+              "event_trigger": {
+                "event": "raid_die"
+              }
+            },
+            "remove_on_hit": {}
+          },
+          "power": 1.4,
+          "gravity": 0.05,
+          "angle_offset": 0
+        }
+      },
+      "smoke_spit":{
+        "minecraft:projectile": {
+          "on_hit": {
+            "definition_event": {
+              "affect_projectile": true,
+              "affect_shooter": false,
+              "affect_target": false,
+              "affect_splash_area": false,
+              "event_trigger": {
+                "event": "smoke_old_hit"
+              }
+            },
+            "remove_on_hit": {}
+          },
+          "power": 1.4,
+          "gravity": 0.05,
+          "angle_offset": 0
+        }
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.3,
+        "height": 0.3
+      },
+      
+      "minecraft:physics": {},
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "add": { "component_groups": [ "smoke_wall" ] },
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_sneaking",
+                  "subject": "other",
+                  "value": false
+                }
+              ]
+            }
+          },
+          {
+            "add": { "component_groups": [ "smoke_spit" ] },
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_sneaking",
+                  "subject": "other",
+                  "value": true
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "raid_die": {
+        "add": {
+          "component_groups": [
+            "raid_die"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "playsound tac.hit_light @a ~~~ 1 1",
+            "playsound tac.smoke @a ~~~ 1 1",
+            "summon nacal_tac:smoke_stay ~~~",
+            //"particle nacal_tac:smoke ~ ~0.5 ~",
+            //"particle nacal_tac:smoke_spit ~ ~1 ~",
+            "fill ~-3 ~-3 ~-3 ~3 ~3 ~3 air 0 replace fire 0"
+          ]
+        }
+      },
+      "smoke_old_hit": {
+        "add": {
+          "component_groups": [
+            "raid_die"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "playsound tac.hit_light @a ~~~ 1 1",
+            "playsound tac.smoke @a ~~~ 1 1",
+            "particle nacal_tac:smoke_group ~ ~0.5 ~",
+            "particle nacal_tac:smoke_spit ~ ~1 ~",
+            "fill ~-4 ~-4 ~-4 ~4 ~4 ~4 air 0 replace fire 0"
+          ]
+        }
+      }
+    }
+  }
+}

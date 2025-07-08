@@ -1,0 +1,27 @@
+{
+  "format_version": "1.18.0",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "nacal_tac:blow"
+    },
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      {
+        "item": "minecraft:iron_ingot",
+        "data": 0
+      },
+      {
+        "item": "minecraft:feather",
+        "data": 0
+      },
+      {
+        "item": "minecraft:stick",
+        "data": 0
+      }
+    ],
+    "result": {
+      "item": "nacal_tac:blow",
+      "count": 4
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.leash.molotov": {
+			"loop": true,
+			"animation_length": 11,
+			"sound_effects": {
+				"0.0": {
+					"effect": "fire"
+				},
+				"5.0": {
+					"effect": "fire"
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "flame",
+					"locator": "belly"
+				},
+				"0.0417": {
+					"effect": "smoke",
+					"locator": "belly"
+				}
+			}
+		},
+		"animation.leash.acid": {
+			"loop": true,
+			"animation_length": 4,
+			"particle_effects": {
+				"0.0": {
+					"effect": "acid1",
+					"locator": "belly"
+				},
+				"0.0417": {
+					"effect": "acid2",
+					"locator": "lead"
+				}
+			}
+		},
+		"animation.leash.elesmoke1": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 12,
+			"sound_effects": {
+				"0.0": {
+					"effect": "elesmoke5"
+				},
+				"0.0167": {
+					"effect": "elesmoke3"
+				},
+				"0.9917": {
+					"effect": "elesmoke4"
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "smoke",
+					"locator": "belly"
+				},
+				"1.0": {
+					"effect": "smoke",
+					"locator": "belly"
+				},
+				"1.0667": {
+					"effect": "arc",
+					"locator": "belly"
+				},
+				"2.0": {
+					"effect": "smoke",
+					"locator": "belly"
+				},
+				"2.0333": {
+					"effect": "arc",
+					"locator": "belly"
+				},
+				"3.0083": {
+					"effect": "smoke",
+					"locator": "belly"
+				},
+				"3.0333": {
+					"effect": "arc",
+					"locator": "belly"
+				},
+				"4.0083": {
+					"effect": "smoke",
+					"locator": "belly"
+				},
+				"4.0333": {
+					"effect": "arc",
+					"locator": "belly"
+				},
+				"5.0083": {
+					"effect": "smoke",
+					"locator": "belly"
+				},
+				"5.025": {
+					"effect": "arc",
+					"locator": "belly"
+				},
+				"6.0": {
+					"effect": "smoke",
+					"locator": "belly"
+				},
+				"6.0333": {
+					"effect": "arc",
+					"locator": "belly"
+				},
+				"7.0333": {
+					"effect": "arc",
+					"locator": "belly"
+				},
+				"8.025": {
+					"effect": "arc",
+					"locator": "belly"
+				},
+				"9.025": {
+					"effect": "arc",
+					"locator": "belly"
+				}
+			}
+		}
+	}
+}

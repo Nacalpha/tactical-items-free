@@ -1,0 +1,34 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nacal_tac:flame_stay",
+      "scripts": {
+        "should_update_bones_and_effects_offscreen": true,
+        "animate": [
+          {"flame":"query.variant == 0"}
+        ]
+      },
+      "materials": {
+        "default": "entity_emissive"
+      },
+      "textures": {
+        "default": "textures/entity/glow/flame"
+      },
+      "geometry": {
+        "default": "geometry.leash"
+      },
+      "particle_effects": {
+        "flame":"nacal_tac:molotov_flame",
+        "smoke":"nacal_city:molotov_smoke"
+      },
+      "sound_effects": {
+        "fire":"fire.fire"
+      },
+      "animations": {
+        "flame": "animation.leash.molotov"
+      },
+      "render_controllers": [ "controller.render.com" ]
+    }
+  }
+}

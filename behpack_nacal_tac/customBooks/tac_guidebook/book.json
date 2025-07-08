@@ -1,0 +1,12 @@
+{
+  "item": "nacal_tac:tac_guidebook",
+  "title1": "战术投掷道具【可合成】",
+  "title2": "合成帮助",
+  "content": "§l§c组件需要开启实验玩法“假日创造者”才能正常工作\n\n§r点击右边书本，查看合成表帮助。",
+  "titleArea": {
+    "offset": [ -10, 0 ],
+    "textSize1": 9,
+    "textSize2": 8,
+    "padding": 1
+  }
+}

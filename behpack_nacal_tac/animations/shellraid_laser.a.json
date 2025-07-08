@@ -1,0 +1,42 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+
+    "animation.shellraid_laser_bp": {
+      "loop": true, "animation_length": 0.6,
+      "timeline": {
+        "0.0": [
+          // "/say laser",
+          "/damage @e[r=3.5] 75 lightning entity @s",
+
+          "/damage @e[y=~35,r=10] 15 lightning entity @s",
+          "/damage @e[y=~25,r=10] 15 lightning entity @s",
+          "/damage @e[y=~15,r=10] 15 lightning entity @s",
+          "/damage @e[y=~5,r=10] 15 lightning entity @s",
+          "/damage @e[y=~-5,r=10] 15 lightning entity @s",
+          "/damage @e[y=~-15,r=10] 15 lightning entity @s",
+          "/damage @e[y=~-25,r=10] 15 lightning entity @s",
+          "/damage @e[y=~-35,r=10] 15 lightning entity @s"
+        ],
+        "0.2": [
+          "/damage @e[y=~32,r=10] 15 lightning entity @s",
+          "/damage @e[y=~22,r=10] 15 lightning entity @s",
+          "/damage @e[y=~12,r=10] 15 lightning entity @s",
+          "/damage @e[y=~2,r=10] 15 lightning entity @s",
+          "/damage @e[y=~-7,r=10] 15 lightning entity @s",
+          "/damage @e[y=~-17,r=10] 15 lightning entity @s",
+          "/damage @e[y=~-27,r=10] 15 lightning entity @s"
+        ],
+        "0.4": [
+          "/damage @e[y=~29,r=10] 15 lightning entity @s",
+          "/damage @e[y=~19,r=10] 15 lightning entity @s",
+          "/damage @e[y=~9,r=10] 15 lightning entity @s",
+          "/damage @e[y=~-1,r=10] 15 lightning entity @s",
+          "/damage @e[y=~-11,r=10] 15 lightning entity @s",
+          "/damage @e[y=~-21,r=10] 15 lightning entity @s",
+          "/damage @e[y=~-31,r=10] 15 lightning entity @s"
+        ]
+      }
+    }
+  }
+}

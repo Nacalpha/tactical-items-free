@@ -1,0 +1,30 @@
+{
+  "modules": [
+    {
+      "description": "Nacalpha TAC Pack",
+      "type": "resources",
+      "uuid": "abe7e9b6-e499-4b94-a6b7-5e7a321b0854",
+      "version": [
+        1,
+        0,
+        4
+      ]
+    }
+  ],
+  "header": {
+    "description": "Nacalpha TAC Pack",
+    "name": "Nacalpha TAC Pack",
+    "uuid": "2ba70ff2-8c3b-4d72-8adf-ad4aeb472b43",
+    "version": [
+      1,
+      0,
+      6
+    ],
+    "min_engine_version": [
+      1,
+      18,
+      0
+    ]
+  },
+  "format_version": 1
+}

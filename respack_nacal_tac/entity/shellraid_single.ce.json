@@ -1,0 +1,37 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nacal_tac:shellraid_single",
+      "scripts": {
+        "animate": [
+          {
+            "down": "query.variant == 1"
+          },
+          {
+            "small": "query.variant == 0"
+          }
+        ],
+        "should_update_bones_and_effects_offscreen": true
+      },
+      "particle_effects": {
+        "line_raid": "nacal_tac:shotline_remi_tac",
+        "raid_fire": "nacal_tac:raid_fire"
+      },
+      "materials": {
+        "default": "entity_emissive"
+      },
+      "textures": {
+        "default": "textures/entity/glow/shellraid_texture"
+      },
+      "geometry": {
+        "default": "geometry.shellraid"
+      },
+      "animations": {
+        "down": "animation.raid_down",
+        "small": "animation.small"
+      },
+      "render_controllers": [ "controller.render.com" ]
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "format_version": "1.18.0",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "nacal_tac:light"
+    },
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      {
+        "item": "minecraft:iron_ingot",
+        "data": 0
+      },
+      {
+        "item": "minecraft:flint",
+        "data": 0
+      },
+      {
+        "item": "minecraft:copper_ingot",
+        "data": 0
+      }
+    ],
+    "result": {
+      "item": "nacal_tac:light",
+      "count": 4
+    }
+  }
+}

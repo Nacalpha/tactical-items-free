@@ -1,0 +1,80 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:force_tone",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "tonedie": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tac" ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:timer": {
+        "time": 0.05,
+        "time_down_event": {
+          "event": "toneclose"
+        }
+      },
+      "minecraft:ageable": {
+        "duration": 2.5,
+        "grow_up": {
+          "event": "tonedie",
+          "target": "self"
+        }
+      },
+      "minecraft:rideable": {
+        "family_types": [ "player" ],
+        "seats": {
+          "lock_rider_rotation": 10,
+          "position": [ 0, 0, 0 ]
+        }
+      },
+      "minecraft:collision_box": {
+        "width": 0.01,
+        "height": 0.01
+      },
+      "minecraft:physics": {}
+
+      //behavivors
+
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "run_command": {
+          "command": [
+            "tp @s ^ ^0.001 ^0.1 facing @e[type=nacal_tac:force_stay,c=1,rm=0.3] true"
+          ]
+        }
+      },
+      "tonedie": {
+        "add": {
+          "component_groups": [
+            "tonedie"
+          ]
+        }
+      },
+      "toneclose": {
+        "run_command": {
+          "command": [
+            "tp @s ^ ^0.001 ^0.1 facing @e[type=nacal_tac:force_stay,c=1,rm=0.2] true"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:detect_throw",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "component_groups": {
+      "detect_die": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.3,
+        "height": 0.3
+      },
+      "minecraft:projectile": {
+        "on_hit": {
+          "definition_event": {
+            "affect_projectile": true,
+            "affect_shooter": false,
+            "affect_target": false,
+            "affect_splash_area": false,
+            "event_trigger": {
+              "event": "detect_die"
+            }
+          },
+          "remove_on_hit": {}
+        },
+        "power": 1.4,
+        "gravity": 0.05,
+        "angle_offset": 0
+      },
+      "minecraft:physics": {},
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "events": {
+      "detect_die": {
+        "add": {
+          "component_groups": [
+            "detect_die"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "summon nacal_tac:detect_stay",
+            "playsound tac.hit_light @a ~~~ 1 1"
+          ]
+        }
+      }
+    }
+  }
+}

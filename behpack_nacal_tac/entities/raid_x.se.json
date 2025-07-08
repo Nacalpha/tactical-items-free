@@ -1,0 +1,71 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:raid_x",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "raid_die": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tac","ads_detect" ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:timer": {
+        "time": [0.5,0.7],
+        "time_down_event": {
+          "event": "raid_spawn"
+        }
+      },
+      "minecraft:is_baby": {},
+      "minecraft:ageable": {
+        "duration": 4.2,
+        "grow_up": {
+          "event": "raid_die"
+        }
+      },
+      "minecraft:collision_box": {
+        "width": 0.001,
+        "height": 0.001
+      }
+
+      //behavivors
+
+    },
+
+    "events": {
+      "raid_die": {
+        "add": {
+          "component_groups": [
+            "raid_die"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "playsound sdc.clip @a[r=32] ~~~ 1 1 0.1"
+          ]
+        }
+      },
+      "raid_spawn": {
+        "run_command": {
+          "command": [
+            "summon nacal_tac:raid_single ~ ~-1 ~ raid",
+            "tp ~4.5 ~ ~"
+          ]
+        }
+      }
+    }
+  }
+}

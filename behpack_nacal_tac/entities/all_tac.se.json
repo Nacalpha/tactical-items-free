@@ -1,0 +1,88 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:all_tac",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "animations": {
+        "controller.all_tac": "controller.animation.all_tac"
+      },
+      "scripts": {
+        "animate": [
+          "controller.all_tac"
+        ]
+      }
+    },
+    "component_groups": {
+      "die": {
+        "minecraft:instant_despawn": {}
+      },
+      "check_tag": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:ageable": {
+          "duration": 0.1,
+          "grow_up": {
+            "event": "godie",
+            "target": "self"
+          }
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tac" ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:ageable": {
+        "duration": 0.2,
+        "grow_up": {
+          "event": "check_tag",
+          "target": "self"
+        }
+      },
+      "minecraft:variant": {
+        "value": 0
+      }
+
+      //behavivors
+
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "run_command": {
+          "command": [
+            "function all_tac",
+            "playsound random.levelup @p",
+            "title @p actionbar 已获取所有道具",
+            "tag @a add tac_is_ok"
+          ]
+        }
+      },
+      "check_tag": {
+        "add": {
+          "component_groups": [
+            "check_tag"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,146 @@
+﻿{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:transport_throw",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "component_groups": {
+      "die": {
+        "minecraft:instant_despawn": {}
+      },
+      "transport_1":{
+        "minecraft:projectile": {
+          "on_hit": {
+            "definition_event": {
+              "affect_projectile": true,
+              "affect_shooter": false,
+              "affect_target": false,
+              "affect_splash_area": false,
+              "event_trigger": {
+                "event": "die"
+              }
+            },
+            "remove_on_hit": {},
+            "teleport_owner": true
+          },
+          "power": 1.4,
+          "gravity": 0.05,
+          "angle_offset": 0
+        }
+      },
+      "transport_2":{
+        "minecraft:projectile": {
+          "on_hit": {
+            "definition_event": {
+              "affect_projectile": true,
+              "affect_shooter": false,
+              "affect_target": false,
+              "affect_splash_area": false,
+              "event_trigger": {
+                "event": "transport_2"
+              }
+            },
+            "remove_on_hit": {}
+          },
+          "power": 1.4,
+          "gravity": 0.05,
+          "angle_offset": 0
+        }
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.3,
+        "height": 0.3
+      },
+      "minecraft:type_family": {
+        "family": [
+          "tac","tool","transport"
+        ]
+      },
+      
+      "minecraft:physics": {},
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "add": { "component_groups": [ "transport_1" ] },
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_sneaking",
+                  "subject": "other",
+                  "value": false
+                }
+              ]
+            }
+          },
+          {
+            "add": { "component_groups": [ "transport_2" ] },
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_sneaking",
+                  "subject": "other",
+                  "value": true
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "die": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        },
+        "run_command": {
+          "command": [
+
+            "particle nacal_sdc:transport_land",
+            "particle nacal_sdc:transport_land",
+            "particle nacal_sdc:transport_land",
+            "playsound mob.endermen.portal @a ~~~",
+            "playsound tac.trans @a ~~~",
+            "tag @e remove transport111",
+            "event entity @e[type=nacal_tac:transport_stay] godie"
+          ]
+        }
+      },
+      "transport_2": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "playsound mob.endermen.portal @a ~~~",
+            "playsound tac.trans @a ~~~",
+            "execute @e[r=6,family=!tac,family=!tool,type=!ender_dragon,c=3,tag=!transport111] ~~~ particle nacal_sdc:transport_land",
+            "execute @e[r=6,family=!tac,family=!tool,type=!ender_dragon,c=3,tag=!transport111] ~~~ particle nacal_tac:circle_transport ~ ~0.5 ~",
+            
+            "title @a[tag=transport111] actionbar §l§d已传送§r @e[r=6,family=!tac,family=!tool,type=!ender_dragon,c=3,tag=!transport111]",
+
+            "tp @e[r=6,family=!tac,family=!tool,type=!ender_dragon,c=3,tag=!transport111] @e[type=nacal_tac:transport_stay,c=1]",
+            "event entity @e[type=nacal_tac:transport_stay] godie",
+            "tag @e remove transport111"
+          ]
+        }
+      }
+    }
+  }
+}

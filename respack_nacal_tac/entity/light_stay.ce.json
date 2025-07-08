@@ -1,0 +1,29 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nacal_tac:light_stay",
+      "scripts": {
+        "animate": [
+          "light_stay"
+        ]
+      },
+      "particle_effects": {
+        "light": "nacal_tac:light"
+      },
+      "materials": {
+        "default": "entity_emissive"
+      },
+      "textures": {
+        "default": "textures/entity/glow/light"
+      },
+      "geometry": {
+        "default": "geometry.light"
+      },
+      "animations": {
+        "light_stay": "animation.light_stay"
+      },
+      "render_controllers": [ "controller.render.com" ]
+    }
+  }
+}

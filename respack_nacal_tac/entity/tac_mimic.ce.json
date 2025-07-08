@@ -1,0 +1,62 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nacal_tac:tac_mimic",
+      "scripts": {
+        "should_update_bones_and_effects_offscreen": true,
+        "initialize": [
+          "variable.is_hit = 0;",
+          "variable.delayed_attack_random = 0;"
+        ],
+        "animate": [
+          "size",
+          
+          "particle_1",
+          "particle_hit_control",
+
+          "body",
+
+          "death_cancel_control"
+        ]
+      },
+      "materials": {
+        "default": "entity_emissive"
+      },
+      "textures": {
+        "default": "textures/entity/prey/mimic_1"
+      },
+      "geometry": {
+        "default": "geometry.prey_mimic"
+      },
+      "animations": {
+        "size":"animation.prey_mimic.size",
+
+        "idle":"animation.prey_mimic.idle",
+        "walk":"animation.prey_mimic.walk",
+        "walkfast":"animation.prey_mimic.walkfast",
+        "body":"controller.animation.prey_mimic.body",
+
+        "particle_1":"animation.prey_mimic.particle_1",
+
+        "delayed_attack_1":"animation.prey_mimic.delayed_attack_1",
+        "delayed_attack_2":"animation.prey_mimic.delayed_attack_2",
+
+        "hurt":"animation.prey_mimic.hurt2",
+        "particle_hit_control":"controller.animation.prey_mimic.hit",
+
+        "death":"animation.prey_mimic.death",
+        "death_cancel":"animation.prey_phantom.death_cancel",
+        "death_cancel_control":"controller.animation.prey_mimic.death_cancel"
+      },
+      "particle_effects": {
+        "mimic_1":"prey:mimic_1",
+        "mimic_2":"prey:mimic_2"
+      },
+      "sound_effects": {
+        "delayed":"prey.mimic.delayed"
+      },
+      "render_controllers": [ "controller.render.prey_tac" ]
+    }
+  }
+}

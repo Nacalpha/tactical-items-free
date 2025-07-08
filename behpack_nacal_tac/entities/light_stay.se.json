@@ -1,0 +1,78 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:light_stay",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "detect_die": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tac" ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:is_baby": {},
+      "minecraft:ageable": {
+        "duration": 30,
+        "grow_up": {
+          "event": "detect_die"
+        }
+      },
+      "minecraft:timer": {
+        "time": 0.05,
+        "time_down_event": {
+          "event": "light_circle"
+        }
+      },
+      "minecraft:collision_box": {
+        "width": 0.001,
+        "height": 0.001
+      },
+      "minecraft:physics": {}
+
+      //behavivors
+
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "run_command": {
+          "command": [
+
+          ]
+        }
+      },
+      "detect_die": {
+        "add": {
+          "component_groups": [
+            "detect_die"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "fill ~-4 ~-4 ~-4 ~4 ~4 ~4 air 0 replace light_block 15"
+          ]
+        }
+      },
+      "light_circle": {
+        "run_command": {
+          "command": [
+            "tp @s ~~~"
+          ]
+        }
+      }
+    }
+  }
+}

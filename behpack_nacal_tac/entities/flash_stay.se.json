@@ -1,0 +1,80 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:flash_stay",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "flash_die": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tac" ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:timer": {
+        "time": 0.3,
+        "time_down_event": {
+          "event": "flash_sound"
+        }
+      },
+      "minecraft:is_baby": {},
+      "minecraft:ageable": {
+        "duration": 1,
+        "grow_up": {
+          "event": "flash_die"
+        }
+      },
+      "minecraft:collision_box": {
+        "width": 0.001,
+        "height": 0.001
+      },
+      "minecraft:physics": {}
+
+      //behavivors
+
+    },
+
+    "events": {
+      "flash_die": {
+        "add": {
+          "component_groups": [
+            "flash_die"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "playsound sdc.shot @a ~~~ 1 1",
+            "particle nacal_tac:flash_circle ~ ~0.5 ~",
+            "playsound sdc.shot @a[r=8] ~~~ 1 1 0.8",
+            "effect @a[r=8,m=!c] blindness 3 1 true",
+            "effect @e[r=8,type=!player] slowness 10 1 false",
+            "title @a[r=8,m=!c] actionbar §l§6被闪光",
+            "title @a[r=8,m=c] actionbar §l创造模式免疫闪光",
+            "title @a[r=8,m=!c] times 1 20 30",
+            "title @a[r=8,m=!c] title "
+          ]
+        }
+      },
+      "flash_sound": {
+        "run_command": {
+          "command": [
+            "execute @a[r=8] ~~~ playsound tac.hit_light @s",
+            "execute @a[r=8,m=!c] ~~~ particle nacal_tac:flash_circle ~ ~1 ~"
+          ]
+        }
+      }
+    }
+  }
+}

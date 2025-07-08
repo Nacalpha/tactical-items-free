@@ -1,0 +1,352 @@
+{
+  "format_version": "1.18.0",
+  "sound_definitions": {
+    "tac.laser.stop": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/tac/laser_stop"
+        }
+      ]
+    },
+    "tac.laser.start": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/tac/laser_start"
+        }
+      ]
+    },
+    "tac.laser.ing": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/tac/laser_ing"
+        }
+      ]
+    },
+    "prey.mimic.idle": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/prey/mimic/mimic_idle_1",
+          "volume": 1.0
+        },
+        {
+          "name": "sounds/prey/mimic/mimic_idle_2",
+          "volume": 1.0
+        },
+        {
+          "name": "sounds/prey/mimic/mimic_idle_3",
+          "volume": 1.0
+        }
+      ]
+    },
+    "prey.mimic.hurt": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/prey/mimic/mimic_hurt_1",
+          "volume": 1.0
+        },
+        {
+          "name": "sounds/prey/mimic/mimic_hurt_2",
+          "volume": 1.0
+        },
+        {
+          "name": "sounds/prey/mimic/mimic_hurt_3",
+          "volume": 1.0
+        }
+      ]
+    },
+    "prey.mimic.delayed": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/prey/mimic/mimic_delayed_1",
+          "volume": 1.0
+        },
+        {
+          "name": "sounds/prey/mimic/mimic_delayed_2",
+          "volume": 1.0
+        },
+        {
+          "name": "sounds/prey/mimic/mimic_delayed_3",
+          "volume": 1.0
+        }
+      ]
+    },
+    "prey.mimic.death": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/prey/mimic/mimic_death_1",
+          "volume": 1.0
+        }
+      ]
+    },
+    "tac.elesmoke1": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/tac/elesmoke1",
+          "stream": true
+        }
+      ]
+    },
+    "tac.elesmoke2": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/tac/elesmoke2",
+          "stream": true
+        }
+      ]
+    },
+    "tac.elesmoke3": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/tac/elesmoke3",
+          "stream": true
+        }
+      ]
+    },
+    "tac.elesmoke4": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/tac/elesmoke4",
+          "stream": true,
+          "volume": 0.5
+        }
+      ]
+    },
+    "tac.elesmoke5": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/tac/elesmoke5",
+          "stream": true
+        }
+      ]
+    },
+    "sdc.clip": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/sdc/clip",
+          "stream": true
+        }
+      ]
+    },
+    "sdc.fire": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/sdc/fire1"
+        },
+        {
+          "name": "sounds/sdc/fire2"
+        },
+        {
+          "name": "sounds/sdc/fire3"
+        }
+      ]
+    },
+    "sdc.shot": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/sdc/shot1"
+        },
+        {
+          "name": "sounds/sdc/shot2"
+        },
+        {
+          "name": "sounds/sdc/shot3"
+        },
+        {
+          "name": "sounds/sdc/shot4"
+        }
+      ]
+    },
+    "tac.trans": {
+      "category": "neutral",
+      "max_distance": 32,
+      "sounds": [
+        {
+          "name": "sounds/tac/trans",
+          "stream": true
+        }
+      ]
+    },
+    "tac.healarea": {
+      "category": "neutral",
+      "max_distance": 32,
+      "sounds": [
+        {
+          "name": "sounds/tac/healarea",
+          "stream": true
+        }
+      ]
+    },
+    "tac.he": {
+      "category": "neutral",
+      "max_distance": 32,
+      "sounds": [
+        {
+          "name": "sounds/tac/he"
+        }
+      ]
+    },
+    "tac.metalpipe": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/tac/metalpipe"
+        }
+      ]
+    },
+    "tac.hu": {
+      "category": "music",
+      "max_distance": 32,
+      "sounds": [
+        {
+          "name": "sounds/tac/hu"
+        }
+      ]
+    },
+    "tac.hit_heavy": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/tac/hit_heavy",
+          "stream": true
+        }
+      ]
+    },
+    "tac.hit_light": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/tac/hit_light",
+          "stream": true
+        }
+      ]
+    },
+    "tac.smoke": {
+      "category": "neutral",
+      "max_distance": 32,
+      "sounds": [
+        {
+          "name": "sounds/tac/smoke",
+          "stream": true
+        }
+      ]
+    },
+    "tac.takeout": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/tac/takeout",
+          "stream": true
+        }
+      ]
+    },
+    "tac.light": {
+      "category": "neutral",
+      "max_distance": 32,
+      "sounds": [
+        {
+          "name": "sounds/tac/light",
+          "stream": true
+        }
+      ]
+    },
+    "tac.scan": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/tac/scan",
+          "stream": true
+        }
+      ]
+    },
+    "tac.raid": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/tac/raid",
+          "stream": true
+        }
+      ]
+    },
+    "tac.flame": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/tac/flame",
+          "stream": true
+        }
+      ]
+    },
+    "tac.charge": {
+      "category": "neutral",
+      "max_distance": 32,
+      "sounds": [
+        {
+          "name": "sounds/tac/charge",
+          "stream": true
+        }
+      ]
+    },
+    "tac.blow_set": {
+      "category": "neutral",
+      "max_distance": 16,
+      "sounds": [
+        {
+          "name": "sounds/tac/blow_set",
+          "stream": true
+        }
+      ]
+    },
+    "tac.blow_up": {
+      "category": "neutral",
+      "max_distance": 16,
+      "sounds": [
+        {
+          "name": "sounds/tac/blow_up"
+        }
+      ]
+    },
+    "tac.mineset_prepare": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/tac/mineset_prepare"
+        }
+      ]
+    },
+    "tac.mineset_boom": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/tac/mineset_boom"
+        }
+      ]
+    },
+  
+  
+    "sdc.bilebomb.throw": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/sdc/bilebomb.throw",
+          "stream": true
+        }
+      ]
+    }
+  }
+  
+}

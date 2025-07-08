@@ -1,0 +1,35 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nacal_tac:blow_stay",
+      "scripts": {
+        "animate": [
+          "blow_stay",
+          "blow_stay_open"
+        ]
+      },
+      "particle_effects": {
+        "blow_1": "nacal_tac:blow_1",
+        "blow_2": "nacal_tac:blow_2"
+      },
+      "sound_effects": {
+        "blow": "tac.blow_up"
+      },
+      "materials": {
+        "default": "entity_emissive"
+      },
+      "textures": {
+        "default": "textures/entity/glow/blow"
+      },
+      "geometry": {
+        "default": "geometry.blow"
+      },
+      "animations": {
+        "blow_stay": "animation.blow_stay",
+        "blow_stay_open": "animation.blow_stay_open"
+      },
+      "render_controllers": [ "controller.render.com" ]
+    }
+  }
+}

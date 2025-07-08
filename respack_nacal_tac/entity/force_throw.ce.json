@@ -1,0 +1,31 @@
+﻿{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nacal_tac:force_throw",
+      "materials": {
+        "default": "entity_emissive"
+      },
+      "particle_effects": {
+        "line": "nacal_sdc:shotline_purple_tac"
+      },
+      "textures": {
+        "default": "textures/entity/glow/force"
+      },
+      "geometry": {
+        "default": "geometry.force"
+      },
+      "render_controllers": [ "controller.render.arrow" ],
+      "animations": {
+        "move": "animation.throwitems.move",
+        "round": "animation.throwitems.round3"
+      },
+      "scripts": {
+        "animate": [
+          "move",
+          "round"
+        ]
+      }
+    }
+  }
+} 

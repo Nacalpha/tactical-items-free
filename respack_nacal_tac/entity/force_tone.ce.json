@@ -1,0 +1,26 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nacal_tac:force_tone",
+      "scripts": {
+        "animate": [
+          "small"
+        ]
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/force"
+      },
+      "geometry": {
+        "default": "geometry.force"
+      },
+      "animations": {
+        "small": "animation.small"
+      },
+      "render_controllers": [ "controller.render.com" ]
+    }
+  }
+}

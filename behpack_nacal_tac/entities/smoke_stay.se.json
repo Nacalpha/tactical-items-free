@@ -1,0 +1,62 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:smoke_stay",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "smoke_die": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tac" ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:is_baby": {},
+      "minecraft:ageable": {
+        "duration": 3,
+        "grow_up": {
+          "event": "smoke_die"
+        }
+      },
+      "minecraft:collision_box": {
+        "width": 0.000,
+        "height": 0.000
+      },
+      "minecraft:physics": {}
+
+      //behavivors
+
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "run_command": {
+          "command": [
+            "particle nacal_tac:smoke_circle_1",
+            "tp @s ~~~ facing @p[tag=smoke_thrower]",
+            "tag @a remove smoke_thrower"
+          ]
+        }
+      },
+      "smoke_die": {
+        "add": {
+          "component_groups": [
+            "smoke_die"
+          ]
+        }
+      }
+    }
+  }
+}

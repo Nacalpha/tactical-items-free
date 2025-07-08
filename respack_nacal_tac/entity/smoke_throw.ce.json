@@ -1,0 +1,31 @@
+﻿{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nacal_tac:smoke_throw",
+      "materials": {
+        "default": "arrow"
+      },
+      "particle_effects": {
+        "line": "nacal_sdc:shotline"
+      },
+      "textures": {
+        "default": "textures/entity/smoke"
+      },
+      "geometry": {
+        "default": "geometry.smoke"
+      },
+      "render_controllers": [ "controller.render.arrow" ],
+      "animations": {
+        "move": "animation.throwitems.move",
+        "round": "animation.throwitems.round3"
+      },
+      "scripts": {
+        "animate": [
+          "move",
+          "round"
+        ]
+      }
+    }
+  }
+} 

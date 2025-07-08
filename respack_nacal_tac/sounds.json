@@ -1,0 +1,15 @@
+{
+  "entity_sounds": {
+    "entities": {
+      "nacal_tac:tac_mimic": {
+        "volume": 1.0,
+        "pitch": [ 0.8, 1.2 ],
+        "events": {
+          "ambient": "prey.mimic.idle",
+          "hurt": "prey.mimic.hurt",
+          "death": "prey.mimic.death"
+        }
+      }
+    }
+  }
+}

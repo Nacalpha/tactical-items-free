@@ -1,0 +1,67 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:mineset_clear",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "die": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tac" ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:ageable": {
+        "duration": 0.1,
+        "grow_up": {
+          "event": "godie",
+          "target": "self"
+        }
+      }
+
+      //behavivors
+
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "run_command": {
+          "command": [
+            "particle nacal_tac:mineset_clear",
+            "particle nacal_tac:mineset_clear",
+            "particle nacal_tac:mineset_clear",
+            "particle nacal_tac:mineset_circle",
+
+
+            "scoreboard objectives add minesetsaubafa dummy mineset123",
+            "scoreboard players add @e[type=nacal_tac:mineset_clear] minesetsaubafa 0",
+            "execute @e[r=16,type=nacal_tac:mineset_stay] ~~~ scoreboard players add @e[type=nacal_tac:mineset_clear] minesetsaubafa 1",
+            "titleraw @p[r=4] actionbar {\"rawtext\":[{\"text\":\"§l§f已清理 §b\"},{\"score\":{\"name\":\"@s\" ,\"objective\":\"minesetsaubafa\"}},{\"text\":\"§f 个霜息骨牙\"} ] }",
+            "event entity @e[r=16,type=nacal_tac:mineset_stay] die",
+
+            "playsound tac.hit_light @p[r=4] ~~~ 1 1"
+          ]
+        }
+      },
+      "godie": {
+        "add": {
+          "component_groups": [
+            "die"
+          ]
+        }
+      }
+    }
+  }
+}

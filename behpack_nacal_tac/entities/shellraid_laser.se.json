@@ -1,0 +1,142 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:shellraid_laser",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "animations": {
+        "laser":"animation.shellraid_laser_bp"
+      },
+      "scripts": {
+        "animate": [
+          {"laser":"q.variant == 12"}
+        ]
+      }
+    },
+    "component_groups": {
+      "shell_die": {
+        "minecraft:instant_despawn": {}
+      },
+      "prepare_laser":{
+        "minecraft:variant":{
+          "value": 11
+        },
+        "minecraft:ageable": {
+          "duration": 1.3,
+          "grow_up": {
+            "event": "start_laser",
+            "target": "self"
+          }
+        }
+      },
+      "start_laser":{
+        "minecraft:variant": {
+          "value": 12
+        },
+        "minecraft:ageable": {
+          "duration": 8.7,
+          "grow_up": {
+            "event": "shell_die",
+            "target": "self"
+          }
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tac","tool","tools" ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      // "minecraft:is_baby": {},
+      // "minecraft:ageable": {
+      //   "duration": 10,
+      //   "grow_up": {
+      //     "event": "shell_die"
+      //   }
+      // },
+      "minecraft:timer": {
+        "time": 0.05,
+        "time_down_event": {
+          "event": "circle"
+        }
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      }
+
+      //behavivors
+
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "prepare_laser"
+          ]
+        }
+      },
+      "start_laser":{
+        "add": {
+          "component_groups": [
+            "start_laser"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "prepare_laser"
+          ]
+        }
+      },
+      "shell": {
+        // "run_command": {
+        //   "command": [
+        //     "spreadplayers ~ ~ 0 8 @s",
+        //     "tp @s ~-0.5 ~-1 ~",
+        //     "summon nacal_tac:shellraid_single ~0.5 ~50 ~"
+        //   ]
+        // }
+      },
+      "shell_spawn_again": {
+        // "add": {
+        //   "component_groups": [
+        //     "shell_spawn_again"
+        //   ]
+        // },
+        // "run_command": {
+        //   "command": [
+        //     "summon nacal_tac:shellraid_single ~0.5 ~50 ~"
+        //   ]
+        // }
+      },
+      "shell_die": {
+        "add": {
+          "component_groups": [
+            "shell_die"
+          ]
+        },
+        "run_command":{
+          "command":[
+            "particle nacal_tac:shellraid_laser_1 ~~~"
+          ]
+        }
+      },
+      "circle": {
+        "run_command": {
+          "command": [
+            "tp @s ~~~"
+          ]
+        }
+      }
+    }
+  }
+}

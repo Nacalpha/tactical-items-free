@@ -1,0 +1,30 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nacal_tac:raid_single",
+      "scripts": {
+        "animate": [
+          "down"
+        ]
+      },
+      "particle_effects": {
+        "line_raid": "nacal_sdc:shotline",
+        "raid_fire": "nacal_tac:raid_fire"
+      },
+      "materials": {
+        "default": "entity_emissive"
+      },
+      "textures": {
+        "default": "textures/entity/glow/raid"
+      },
+      "geometry": {
+        "default": "geometry.raid"
+      },
+      "animations": {
+        "down": "animation.raid_down"
+      },
+      "render_controllers": [ "controller.render.com" ]
+    }
+  }
+}

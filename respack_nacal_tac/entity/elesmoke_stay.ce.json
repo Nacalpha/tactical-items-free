@@ -1,0 +1,38 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nacal_tac:elesmoke_stay",
+      "scripts": {
+        "should_update_bones_and_effects_offscreen": true,
+        "animate": [
+          "elesmoke1"
+        ]
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/flame"
+      },
+      "geometry": {
+        "default": "geometry.leash"
+      },
+      "particle_effects": {
+        "smoke":"nacal_tac:elesmoke_1",
+        "arc":"nacal_tac:arc_particle"
+      },
+      "sound_effects": {
+        "elesmoke1":"tac.elesmoke1",
+        "elesmoke2":"tac.elesmoke2",
+        "elesmoke3":"tac.elesmoke3",
+        "elesmoke4":"tac.elesmoke4",
+        "elesmoke5":"tac.elesmoke5"
+      },
+      "animations": {
+        "elesmoke1": "animation.leash.elesmoke1"
+      },
+      "render_controllers": [ "controller.render.com" ]
+    }
+  }
+}

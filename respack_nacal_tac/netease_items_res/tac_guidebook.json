@@ -1,0 +1,12 @@
+{
+    "format_version": "1.10",
+    "minecraft:item":{
+        "description":{
+            "identifier": "nacal_tac:tac_guidebook",
+            "category": "Nature"
+        },
+        "components":{
+            "minecraft:icon": "nacal_tac:book_tac"
+        }
+    }
+}

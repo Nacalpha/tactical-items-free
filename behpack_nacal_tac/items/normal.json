@@ -1,0 +1,43 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "nacal_tac:normal",
+      "category": "equipment"
+    },
+    "components": {
+      "minecraft:max_stack_size": 32,
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "throw"
+        }
+      },
+      "minecraft:cooldown": {
+        "category": "normal",
+        "duration": 1
+      },
+      "minecraft:damage": 1,
+      "minecraft:icon": {
+        "texture": "normal"
+      },
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.equipment"
+      }
+    },
+    "events": {
+      "throw": {
+        "shoot": {
+          "projectile": "nacal_tac:normal_throw",
+          "launch_power": 1
+        },
+        "swing": {},
+        "decrement_stack": {},
+        "run_command": {
+          "command": [
+            "playsound sdc.bilebomb.throw @a ~~~ 1 1"
+          ]
+        }
+      }
+    }
+  }
+}

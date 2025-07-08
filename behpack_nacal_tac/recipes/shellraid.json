@@ -1,0 +1,27 @@
+{
+  "format_version": "1.18.0",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "nacal_tac:shellraid"
+    },
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      {
+        "item": "minecraft:iron_ingot",
+        "data": 0
+      },
+      {
+        "item": "minecraft:tnt",
+        "data": 0
+      },
+      {
+        "item": "minecraft:magma_cream",
+        "data": 0
+      }
+    ],
+    "result": {
+      "item": "nacal_tac:shellraid",
+      "count": 2
+    }
+  }
+}

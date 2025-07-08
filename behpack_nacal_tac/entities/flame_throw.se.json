@@ -1,0 +1,156 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:flame_throw",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "component_groups": {
+      "flash_die": {
+        "minecraft:instant_despawn": {}
+      },
+      "flame_entity":{
+        "minecraft:projectile": {
+          "on_hit": {
+            "particle_on_hit": {
+              "particle_type": "lava",
+              "num_particles": 30,
+              "on_entity_hit": true,
+              "on_other_hit": true
+            },
+            "definition_event": {
+              "affect_projectile": true,
+              "affect_shooter": false,
+              "affect_target": false,
+              "affect_splash_area": false,
+              "event_trigger": {
+                "event": "flash_die"
+              }
+            },
+            "remove_on_hit": {}
+          },
+          "power": 1.1,
+          "gravity": 0.05,
+          "angle_offset": 0
+        }
+      },
+      "flame_block":{
+        "minecraft:projectile": {
+          "on_hit": {
+            "particle_on_hit": {
+              "particle_type": "lava",
+              "num_particles": 30,
+              "on_entity_hit": true,
+              "on_other_hit": true
+            },
+            "definition_event": {
+              "affect_projectile": true,
+              "affect_shooter": false,
+              "affect_target": false,
+              "affect_splash_area": false,
+              "event_trigger": {
+                "event": "flame_block_hit"
+              }
+            },
+            "remove_on_hit": {}
+          },
+          "power": 1.1,
+          "gravity": 0.05,
+          "angle_offset": 0
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "ads_detect"
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.3,
+        "height": 0.3
+      },
+
+      "minecraft:physics": {},
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "add": { "component_groups": [ "flame_entity" ] },
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_sneaking",
+                  "subject": "other",
+                  "value": false
+                }
+              ]
+            }
+          },
+          {
+            "add": { "component_groups": [ "flame_block" ] },
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_sneaking",
+                  "subject": "other",
+                  "value": true
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "flash_die": {
+        "add": {
+          "component_groups": [
+            "flash_die"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "playsound tac.flame @a ~~~ 1 1",
+            //"particle nacal_sdc:burn",
+            //"fill ~-1.5 ~-2 ~-1.5 ~1.5 ~1.5 ~1.5 fire 0 replace air 0",
+            //"fill ~-1.5 ~-2 ~-1.5 ~1.5 ~1.5 ~1.5 fire 0 replace snow_layer",
+            "summon nacal_tac:flame_stay"
+          ]
+        }
+      },
+      "flame_block_hit": {
+        "add": {
+          "component_groups": [
+            "flash_die"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "playsound tac.flame @a ~~~ 1 1",
+            "particle nacal_sdc:burn",
+            "fill ~-1.5 ~-2 ~-1.5 ~1.5 ~1.5 ~1.5 fire 0 replace air 0",
+            "fill ~-1.5 ~-2 ~-1.5 ~1.5 ~1.5 ~1.5 fire 0 replace snow_layer",
+            "summon nacal_tac:flame_stay ~~~ blockfire"
+          ]
+        }
+      },
+      "godie":{
+        "add": {
+          "component_groups": [
+            "flash_die"
+          ]
+        }
+      }
+    }
+  }
+}

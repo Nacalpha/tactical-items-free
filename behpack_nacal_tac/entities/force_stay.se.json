@@ -1,0 +1,132 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nacal_tac:force_stay",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "force_die": {
+        "minecraft:explode": {
+          "fuseLength": -1,
+          "fuseLit": true,
+          "power": 4.5,
+          "causesFire": false,
+          "breaks_blocks": false
+        }
+      },
+      "force_stage1": {
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:is_baby": {},
+        "minecraft:ageable": {
+          "duration": 1.0,
+          "grow_up": {
+            "event": "force_turn_stage2"
+          }
+        }
+      },
+      "force_stage2": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:is_baby": {},
+        "minecraft:ageable": {
+          "duration": 4.0,
+          "grow_up": {
+            "event": "force_die"
+          }
+        },
+        "minecraft:timer": {
+          "time": 0.05,
+          "time_down_event": {
+            "event": "force_in"
+          }
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tac" ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:collision_box": {
+        "width": 0.001,
+        "height": 0.001
+      },
+      "minecraft:physics": {}
+
+      //behavivors
+
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "force_stage1"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "particle nacal_tac:force_circle ~ ~0.2 ~"
+          ]
+        }
+      },
+      "force_die": {
+        "add": {
+          "component_groups": [
+            "force_die"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "playsound tac.he @a ~~~ 1 1 0.5",
+            "camerashake add @a[tag=!noshake,r=16] 0.3 0.2 positional",
+            "kill @e[type=nacal_tac:force_tone,r=32]",
+            "particle nacal_tac:force_wave ~ ~ ~"
+          ]
+        }
+      },
+      "force_turn_stage2": {
+        "add": {
+          "component_groups": [
+            "force_stage2"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "force_stage1"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "tp @s ~ ~1 ~",
+            "particle nacal_tac:force_around ~ ~1 ~",
+            "particle nacal_tac:force_circle ~ ~0.2 ~",
+            "playsound tac.charge @a ~~~ 1 1 0.8"
+          ]
+        }
+      },
+      "force_in": {
+        "run_command": {
+          "command": [
+            "tp @s ~ ~ ~",
+            "execute @e[r=12,family=!transport,family=!tac,type=!player,type=!arrow,type=!item,type=!thrown_trident,type=!armor_stand,type=!evocation_fang,type=!lightning_bolt,type=!fireworks_rocket,type=!snowball,type=!egg,type=!xp_bottle,type=!xp_orb,type=!ender_pearl,type=!splash_potion,type=!fishing_hook] ~~~ tp @s ^ ^0.02 ^0.2 facing @e[type=nacal_tac:force_stay,c=1,rm=0.2] true",
+            "ride @a[m=!c,x=~-6,y=~-3,z=~-6,dx=12,dy=5,dz=12] summon_ride nacal_tac:force_tone skip_riders",
+            "title @a[m=c,x=~-6,y=~-3,z=~-6,dx=12,dy=5,dz=12] actionbar §l创造模式免疫吸引"
+          ]
+        }
+      }
+    }
+  }
+}

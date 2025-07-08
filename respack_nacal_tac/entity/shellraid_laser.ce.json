@@ -1,0 +1,39 @@
+﻿{
+  "format_version": "1.12.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nacal_tac:shellraid_laser",
+      "scripts": {
+        "should_update_bones_and_effects_offscreen":true,
+        "scale": "1.5",
+        "initialize": [
+          "variable.random_rotate = math.random(0,360);"
+        ],
+        "animate": [
+          "laser"
+        ]
+      },
+      "materials": {
+        "default": "nacal_tac_shellraid_laser"
+      },
+      "textures": {
+        "default": "textures/entity/shellraid"
+      },
+      "geometry": {
+        "default": "geometry.shellraid_laser"
+      },
+      "animations": {
+        "laser": "animation.shellraid_laser.laser"
+      },
+      "sound_effects": {
+        "laser_ing":"tac.laser.ing",
+        "laser_start":"tac.laser.start",
+        "laser_stop":"tac.laser.stop"
+      },
+      "render_controllers": [ "controller.render.com" ],
+      "spawn_egg": {
+        "texture": "egg_shellraid"
+      }
+    }
+  }
+}
