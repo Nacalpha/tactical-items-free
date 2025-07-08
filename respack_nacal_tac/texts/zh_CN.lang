@@ -59,7 +59,7 @@ item.nacal_tac:tac_guidebook.name=合成帮助 - 战术投掷道具
 
 entity.nacal_tac:all_tac.name=战术投掷道具
 
-item.spawn_egg.entity.nacal_tac:all_tac.name=点地获取所有道具 - 需要实验玩法"假日创造者"
+item.spawn_egg.entity.nacal_tac:all_tac.name=点地获取所有道具
 item.spawn_egg.entity.nacal_tac:mineset_stay.name=生成霜息骨牙
 item.spawn_egg.entity.nacal_tac:mineset_clear.name=清理附近的霜息骨牙（点地）
 
