@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "nacal_tac:all_tac",
@@ -60,7 +60,7 @@
 
     "events": {
       "minecraft:entity_spawned": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "function all_tac",
             "playsound random.levelup @p",

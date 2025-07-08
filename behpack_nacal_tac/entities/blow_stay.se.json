@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "nacal_tac:blow_stay",
@@ -48,7 +48,7 @@
 
     "events": {
       "minecraft:entity_spawned": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "playsound tac.blow_set @a[r=30] ~~~ 1 1 0.8",
             "particle nacal_tac:blow_circle ~ ~0.2 ~"
@@ -61,14 +61,14 @@
             "blow_die"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "particle nacal_tac:blow_circle ~ ~0.2 ~"
           ]
         }
       },
       "circle": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "effect @a[r=3,y=~2] slow_falling 6 1 true",
             "effect @a[r=3,y=~5] slow_falling 4 0 true",

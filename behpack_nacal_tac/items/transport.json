@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.100",
+  "format_version": "1.20.10",
   "minecraft:item": {
     "description": {
       "identifier": "nacal_tac:transport",
@@ -7,23 +7,22 @@
     },
     "components": {
       "minecraft:max_stack_size": 32,
-      "minecraft:on_use": {
-        "on_use": {
-          "event": "throw"
-        }
-      },
+      
       "minecraft:cooldown": {
         "category": "transport",
         "duration": 1
       },
       "minecraft:damage": 1,
+      "minecraft:throwable": {
+        "do_swing_animation": true
+      },
+      "minecraft:projectile": {
+        "projectile_entity": "nacal_tac:transport_throw"
+      },
       "minecraft:icon": {
         "texture": "transport"
-      },
-      "minecraft:creative_category": {
-        "parent": "itemGroup.name.equipment"
       }
-    },
+    }/* ,
     "events": {
       "throw": {
         "sequence":[
@@ -45,45 +44,9 @@
               ]
             }
           }
-          /* {
-            "filters": {
-              "all_of": [
-                {
-                  "test": "is_sneaking",
-                  "value": false
-                }
-              ]
-            },
-            
-          },
-          {
-            "filters": {
-              "all_of": [
-                {
-                  "test": "is_sneaking",
-                  "value": true
-                }
-              ]
-            },
-            "shoot": {
-              "projectile": "nacal_tac:transport_throw",
-              "launch_power": 1,
-              "angle_offset": 0
-            },
-            "swing": {},
-            "decrement_stack": {},
-            "run_command": {
-              "command": [
-                "tag @p add transport111",
-                "playsound sdc.bilebomb.throw @a ~~~ 1 1",
-                "particle nacal_sdc:transport_land",
-                
-              ]
-            }
-          } */
         ]
         
       }
-    }
+    } */
   }
 }

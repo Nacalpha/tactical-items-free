@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "nacal_tac:mineset_stay",
@@ -208,7 +208,7 @@
             "damage_stage_1"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             /* "effect @e[r=4,type=!player,family=!tac,tag=!not_mineset] wither 5 2 true",
             "effect @e[r=4,type=!player,family=!tac,tag=!not_mineset] slowness 6 0 false",
@@ -227,7 +227,7 @@
             "damage_stage_1"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "particle nacal_tac:mineset_circle"
           ]
@@ -240,7 +240,7 @@
             "damage_stage_1"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "particle nacal_tac:mineset_circle",
             "tp @s ~~~ facing @p[tag=mineset_thrower]",
@@ -257,7 +257,7 @@
             "damage_stage_1"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "particle nacal_tac:mineset_circle",
             "tp @s ~~~ facing @p[tag=mineset_thrower]",
@@ -274,7 +274,7 @@
             "die"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "particle nacal_tac:mineset_boom",
             "particle nacal_tac:mineset_boom",
@@ -294,7 +294,7 @@
             "ready_time"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "effect @e[r=4,type=!player,family=!tac,tag=!not_mineset] wither 5 2 true",
             "effect @e[r=4,type=!player,family=!tac,tag=!not_mineset] slowness 6 0 false",
@@ -316,7 +316,7 @@
             "prepare_time"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "particle nacal_tac:mineset_circle",
             "playsound tac.mineset_prepare @a ~~~ 1 1"
@@ -324,7 +324,7 @@
         }
       },
       "search_player": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "execute @a[r=2,m=!c,tag=!not_mineset] ~~~ event entity @e[type=nacal_tac:mineset_stay,r=2]  boom"
             //"execute @e[r=2,tag=!not_mineset] ~~~ event entity @e[type=nacal_tac:mineset_stay,r=2]  boom"

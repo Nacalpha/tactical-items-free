@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "nacal_tac:light_throw",
@@ -101,7 +101,7 @@
             "flash_die"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "playsound tac.light @a[r=32] ~~~ 1 1 0.2",
             "fill ~-2 ~-2 ~-2 ~2 ~1.5 ~2 light_block 15 replace air 0",
@@ -115,7 +115,7 @@
             "flash_die"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "playsound tac.light @a[r=32] ~~~ 1 1 0.2",
             "fill ~-0.5 ~-0.4 ~-0.5 ~0.5 ~0.0 ~0.5 torch 0 replace air 0",

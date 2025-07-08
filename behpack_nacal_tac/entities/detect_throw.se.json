@@ -1,5 +1,5 @@
 ﻿{
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "nacal_tac:detect_throw",
@@ -51,7 +51,7 @@
             "detect_die"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "summon nacal_tac:detect_stay",
             "playsound tac.hit_light @a ~~~ 1 1"

@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "nacal_tac:healarea_stay",
@@ -70,7 +70,7 @@
             "force_stage2"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "tp @s ~ ~ ~",
             "particle nacal_sdc:healarea_bigcircle_2 ~ ~ ~",
@@ -87,14 +87,14 @@
             "godie"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "particle nacal_tac:healarea_circle ~ ~1 ~"
           ]
         }
       },
       "heal": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "effect @e[r=8,family=player] regeneration 3 2 true",
             "effect @e[r=8,family=player] resistance 3 1 true",

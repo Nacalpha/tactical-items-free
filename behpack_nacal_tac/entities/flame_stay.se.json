@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "nacal_tac:flame_stay",
@@ -85,7 +85,7 @@
             "blockfire"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "gamerule dofiretick false"
           ]
@@ -97,7 +97,7 @@
             "flame_die"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "particle nacal_sdc:m79dust",
             "particle nacal_sdc:burn",
@@ -106,14 +106,14 @@
         }
       },
       "stay": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "tp @s ~~~"
           ]
         }
       },
       "flame_attack":{
-        "run_command": {
+        "queue_command": {
           "command": [
 /*             "damage @e[family=player,r=3.5] 1 fire",
             "execute @e[family=player,r=3.5] ~~~ particle nacal_city:molotov_flame_small ~ ~1 ~",

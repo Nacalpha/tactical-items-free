@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "nacal_tac:raid_x",
@@ -52,14 +52,14 @@
             "raid_die"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "playsound sdc.clip @a[r=32] ~~~ 1 1 0.1"
           ]
         }
       },
       "raid_spawn": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "summon nacal_tac:raid_single ~ ~-1 ~ raid",
             "tp ~4.5 ~ ~"

@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "nacal_tac:blow_throw",
@@ -101,7 +101,7 @@
             "blow_die"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "playsound tac.light @a[r=32] ~~~ 1 1 0.2",
             "summon nacal_tac:blow_stay"
@@ -114,7 +114,7 @@
             "blow_die"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "playsound tac.light @a[r=32] ~~~ 1 1 0.2",
             "playsound tac.blow_set @a[r=30] ~~~ 1 1 0.8",

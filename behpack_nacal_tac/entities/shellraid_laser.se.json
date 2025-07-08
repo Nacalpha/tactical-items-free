@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "nacal_tac:shellraid_laser",
@@ -98,7 +98,7 @@
         }
       },
       "shell": {
-        // "run_command": {
+        // "queue_command": {
         //   "command": [
         //     "spreadplayers ~ ~ 0 8 @s",
         //     "tp @s ~-0.5 ~-1 ~",
@@ -112,7 +112,7 @@
         //     "shell_spawn_again"
         //   ]
         // },
-        // "run_command": {
+        // "queue_command": {
         //   "command": [
         //     "summon nacal_tac:shellraid_single ~0.5 ~50 ~"
         //   ]
@@ -124,14 +124,14 @@
             "shell_die"
           ]
         },
-        "run_command":{
+        "queue_command":{
           "command":[
             "particle nacal_tac:shellraid_laser_1 ~~~"
           ]
         }
       },
       "circle": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "tp @s ~~~"
           ]

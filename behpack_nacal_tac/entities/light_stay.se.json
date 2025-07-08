@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "nacal_tac:light_stay",
@@ -48,7 +48,7 @@
 
     "events": {
       "minecraft:entity_spawned": {
-        "run_command": {
+        "queue_command": {
           "command": [
 
           ]
@@ -60,14 +60,14 @@
             "detect_die"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "fill ~-4 ~-4 ~-4 ~4 ~4 ~4 air 0 replace light_block 15"
           ]
         }
       },
       "light_circle": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "tp @s ~~~"
           ]

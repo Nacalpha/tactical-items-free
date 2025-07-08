@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "nacal_tac:smoke_throw",
@@ -101,7 +101,7 @@
             "raid_die"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "playsound tac.hit_light @a ~~~ 1 1",
             "playsound tac.smoke @a ~~~ 1 1",
@@ -118,7 +118,7 @@
             "raid_die"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "playsound tac.hit_light @a ~~~ 1 1",
             "playsound tac.smoke @a ~~~ 1 1",

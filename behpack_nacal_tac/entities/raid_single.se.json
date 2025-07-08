@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "nacal_tac:raid_single",
@@ -51,7 +51,7 @@
 
     "events": {
       "minecraft:entity_spawned": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "tp @s ~ ~50 ~"
           ]
@@ -63,7 +63,7 @@
             "raid_die"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "playsound tac.he @a ~~~ 1 1 0.1",
             "effect @a[r=5,m=!c] slowness 8 1 true",

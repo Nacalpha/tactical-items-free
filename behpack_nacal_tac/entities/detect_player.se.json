@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "nacal_tac:detect_player",
@@ -47,7 +47,7 @@
 
     "events": {
       "minecraft:entity_spawned": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "playsound sdc.clip @a[r=32] ~~~ 1 1 0.1"
           ]
@@ -61,7 +61,7 @@
         }
       },
       "tp": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "tp @s @e[c=1,r=1.5,type=player]",
             "effect @s invisibility 0 255 true",

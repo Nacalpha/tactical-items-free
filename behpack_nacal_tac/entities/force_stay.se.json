@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "nacal_tac:force_stay",
@@ -76,7 +76,7 @@
             "force_stage1"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "particle nacal_tac:force_circle ~ ~0.2 ~"
           ]
@@ -88,7 +88,7 @@
             "force_die"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "playsound tac.he @a ~~~ 1 1 0.5",
             "camerashake add @a[tag=!noshake,r=16] 0.3 0.2 positional",
@@ -108,7 +108,7 @@
             "force_stage1"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "tp @s ~ ~1 ~",
             "particle nacal_tac:force_around ~ ~1 ~",
@@ -118,7 +118,7 @@
         }
       },
       "force_in": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "tp @s ~ ~ ~",
             "execute @e[r=12,family=!transport,family=!tac,type=!player,type=!arrow,type=!item,type=!thrown_trident,type=!armor_stand,type=!evocation_fang,type=!lightning_bolt,type=!fireworks_rocket,type=!snowball,type=!egg,type=!xp_bottle,type=!xp_orb,type=!ender_pearl,type=!splash_potion,type=!fishing_hook] ~~~ tp @s ^ ^0.02 ^0.2 facing @e[type=nacal_tac:force_stay,c=1,rm=0.2] true",

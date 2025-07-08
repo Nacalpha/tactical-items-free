@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "nacal_tac:transport_stay",
@@ -55,7 +55,7 @@
         }
       },
       "circle":{
-        "run_command": {
+        "queue_command": {
           "command": [
             "particle nacal_tac:circle_transport ~ ~0.5 ~"
           ]

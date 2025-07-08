@@ -1,5 +1,5 @@
 ﻿{
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "nacal_tac:raid_throw",
@@ -51,7 +51,7 @@
             "raid_die"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "playsound tac.raid @a[r=30] ~~~ 1 1 0.8",
             "particle nacal_tac:shellraid_circle ~ ~1 ~",

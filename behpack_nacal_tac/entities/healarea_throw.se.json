@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "nacal_tac:healarea_throw",
@@ -101,7 +101,7 @@
             "force_die"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "playsound tac.hit_light @a ~~~ 1 1",
             "summon nacal_tac:healarea_stay"
@@ -114,7 +114,7 @@
             "force_die"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "playsound tac.hit_light @a ~~~ 1 1",
             "particle nacal_sdc:healarea_bigcircle_2 ~ ~ ~",

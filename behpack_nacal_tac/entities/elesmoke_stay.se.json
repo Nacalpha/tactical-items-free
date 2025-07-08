@@ -1,5 +1,5 @@
 {
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "nacal_tac:elesmoke_stay",
@@ -85,7 +85,7 @@
         }
       },
       "elesmoke_attack":{
-        "run_command": {
+        "queue_command": {
           "command": [
 /*             "damage @e[family=player,r=3.5] 1 fire",
             "execute @e[family=player,r=3.5] ~~~ particle nacal_city:molotov_elesmoke_small ~ ~1 ~",

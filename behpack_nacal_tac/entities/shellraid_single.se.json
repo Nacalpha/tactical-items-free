@@ -1,5 +1,5 @@
 ﻿{
-  "format_version": "1.16.0",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "nacal_tac:shellraid_single",
@@ -86,7 +86,7 @@
     },
     "events": {
       "minecraft:entity_spawned": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "scoreboard objectives add shellraidcount dummy shell",
             "scoreboard players random @s shellraidcount 1 140"
@@ -94,7 +94,7 @@
         }
       },
       "circle": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "execute @s[scores={shellraidcount=0..}] ~~~ tp @s ~~~",
             "execute @s[scores={shellraidcount=0..}] ~~~ scoreboard players remove @s shellraidcount 1",
@@ -108,7 +108,7 @@
             "boom"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "playsound tac.he @a ~~~ 1 1",
             "particle nacal_tac:tnnk_dust",
@@ -125,7 +125,7 @@
             "start_fall"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
 
           ]
