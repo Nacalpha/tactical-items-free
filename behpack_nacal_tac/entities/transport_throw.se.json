@@ -24,7 +24,6 @@
                 "event": "die"
               }
             },
-            "remove_on_hit": {},
             "teleport_owner": true
           },
           "power": 1.4,
@@ -43,8 +42,7 @@
               "event_trigger": {
                 "event": "transport_2"
               }
-            },
-            "remove_on_hit": {}
+            }
           },
           "power": 1.4,
           "gravity": 0.05,

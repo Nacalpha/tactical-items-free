@@ -28,8 +28,7 @@
             "event_trigger": {
               "event": "flash_die"
             }
-          },
-          "remove_on_hit": {}
+          }
         },
         "power": 1.4,
         "gravity": 0.05,

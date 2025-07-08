@@ -23,13 +23,11 @@
               "event_trigger": {
                 "event": "shell_die"
               }
-            },
-            "remove_on_hit": {}
+            }
           },
           "power": 1.4,
           "gravity": 0.05,
-          "angle_offset": 0,
-          "remove_on_hit": {}
+          "angle_offset": 0
         }
       },
       "shellraid_2":{
@@ -43,13 +41,11 @@
               "event_trigger": {
                 "event": "shell_die_2"
               }
-            },
-            "remove_on_hit": {}
+            }
           },
           "power": 1.4,
           "gravity": 0.05,
-          "angle_offset": 0,
-          "remove_on_hit": {}
+          "angle_offset": 0
         }
       }
     },

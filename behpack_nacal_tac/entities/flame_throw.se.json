@@ -29,8 +29,7 @@
               "event_trigger": {
                 "event": "flash_die"
               }
-            },
-            "remove_on_hit": {}
+            }
           },
           "power": 1.1,
           "gravity": 0.05,
@@ -54,8 +53,7 @@
               "event_trigger": {
                 "event": "flame_block_hit"
               }
-            },
-            "remove_on_hit": {}
+            }
           },
           "power": 1.1,
           "gravity": 0.05,

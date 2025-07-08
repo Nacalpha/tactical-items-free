@@ -23,8 +23,7 @@
               "event_trigger": {
                 "event": "blow_die"
               }
-            },
-            "remove_on_hit": {}
+            }
           },
           "power": 1.4,
           "gravity": 0.05,
@@ -42,8 +41,7 @@
               "event_trigger": {
                 "event": "blow_2"
               }
-            },
-            "remove_on_hit": {}
+            }
           },
           "power": 1.4,
           "gravity": 0.05,

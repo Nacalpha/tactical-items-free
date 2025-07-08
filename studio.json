@@ -24,6 +24,7 @@
   "SaveBackAddOnPath": null,
   "ResourceIds": [],
   "EditAddOnPaths": [],
+  "NameSpace": null,
   "EditMaterialPaths": [],
   "EditLogFilePath": "C:\\MCStudioDownload\\work\\editor\\edit.log",
   "ServerName": "EXPR",
@@ -34,5 +35,8 @@
   "ElkUrl": "https://x19mclexpr.nie.netease.com/client-log",
   "ShowGpuDriverTips": false,
   "StudioTempPath": "C:\\MCStudioDownload\\temp\\editorTemp",
-  "EditorResourcePackPath": "C:\\Program Files (x86)\\Netease\\MCStudio\\data\\inner_res"
+  "EditorResourcePackPath": "C:\\Program Files (x86)\\Netease\\MCStudio\\data\\inner_res",
+  "EditDate": null,
+  "EditDuration": null,
+  "TestDuration": 100
 }
